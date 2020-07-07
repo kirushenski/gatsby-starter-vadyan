@@ -13,8 +13,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint . --fix --ext .js,.ts,.tsx,.mdx --ignore-path .gitignore",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    "lint": "eslint . --ext .js,.ts,.tsx,.mdx --ignore-path .gitignore --fix"
   },
   "dependencies": {
     "gatsby": "^2.23.22",
