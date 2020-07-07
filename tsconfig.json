@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@api/*": ["src/api/*"],
+      "@images/*": ["src/images/*"],
+      "@icons/*": ["src/images/icons/*"],
+      "@decorators/*": [".storybook/decorators/*"]
+    }
+  },
+  "include": ["src", ".storybook/**/*.ts", ".storybook/**/*.tsx"]
+}
