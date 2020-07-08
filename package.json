@@ -28,6 +28,14 @@
       "lint"
     ]
   },
+  "browserslist": [
+    "last 2 Chrome major versions",
+    "last 2 Firefox major versions",
+    "last 2 Safari major versions",
+    "last 2 Edge major versions",
+    "last 2 ChromeAndroid major versions",
+    "last 2 iOS major versions"
+  ],
   "dependencies": {
     "gatsby": "^2.23.22",
     "react": "^16.13.1",
