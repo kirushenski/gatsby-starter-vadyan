@@ -24,9 +24,7 @@
     }
   },
   "lint-staged": {
-    "*.{tsx,ts,mdx,js}": [
-      "eslint . --ext .tsx,.ts,.mdx,.js --ignore-path .gitignore --fix"
-    ]
+    "*.{tsx,ts,mdx,js}": "npm run lint"
   },
   "browserslist": [
     "last 2 Chrome major versions",
