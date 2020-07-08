@@ -25,7 +25,7 @@
   },
   "lint-staged": {
     "*.{tsx,ts,mdx,js}": [
-      "lint"
+      "eslint . --ext .tsx,.ts,.mdx,.js --ignore-path .gitignore --fix"
     ]
   },
   "browserslist": [
@@ -37,6 +37,7 @@
     "last 2 iOS major versions"
   ],
   "dependencies": {
+    "@emotion/core": "^10.0.28",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -59,6 +60,7 @@
     "eslint-plugin-testing-library": "^3.3.1",
     "gatsby": "^2.23.22",
     "gatsby-alias-imports": "^1.0.4",
+    "gatsby-plugin-emotion": "^4.3.9",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "2.0.5",

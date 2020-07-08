@@ -16,7 +16,8 @@
       "@images/*": ["src/images/*"],
       "@icons/*": ["src/images/icons/*"],
       "@decorators/*": [".storybook/decorators/*"]
-    }
+    },
+    "types": ["node", "@emotion/core"]
   },
   "include": ["src", ".storybook/**/*.ts", ".storybook/**/*.tsx"]
 }

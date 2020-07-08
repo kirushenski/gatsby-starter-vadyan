@@ -9,10 +9,14 @@ const Hello = ({ children, defaultValue = 0 }: HelloProps) => {
   const [count, setCount] = useState(defaultValue)
   return (
     <div>
-      <button type="button" onClick={() => setCount(count + 1)}>
+      <button
+        type="button"
+        onClick={() => setCount(count + 1)}
+        css={{ backgroundColor: 'purple', color: 'white' }}
+      >
         Hello, {children}! Click me
       </button>
-      <p>You clidked: {count} times</p>
+      <p>You clicked: {count} times</p>
     </div>
   )
 }
