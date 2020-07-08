@@ -11,7 +11,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@utils/*": ["src/utils/*"],
-      "@hooks/*": ["src/hooks/*"],
+      "@hooks/*": ["src/utils/hooks/*"],
       "@api/*": ["src/api/*"],
       "@images/*": ["src/images/*"],
       "@icons/*": ["src/images/icons/*"],
