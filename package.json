@@ -14,7 +14,19 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint . --ext .tsx,.ts,.mdx,.js --ignore-path .gitignore --fix",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "validate": "npm run lint && npm run type-check && npm run build",
+    "setup": "npm i && npm run validate"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run type-check"
+    }
+  },
+  "lint-staged": {
+    "*.{tsx,ts,mdx,js}": [
+      "lint"
+    ]
   },
   "dependencies": {
     "gatsby": "^2.23.22",
@@ -39,6 +51,8 @@
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.5",
     "eslint-plugin-testing-library": "^3.3.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
     "prettier": "2.0.5"
   }
 }
