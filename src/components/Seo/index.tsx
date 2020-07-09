@@ -11,7 +11,11 @@ interface SeoProps {
   pathname?: string
 }
 
-interface SeoQuery {
+interface SeoWithDataProps extends SeoProps {
+  data: SeoQuery
+}
+
+export interface SeoQuery {
   site: {
     siteMetadata: {
       title: string
@@ -27,32 +31,15 @@ interface SeoQuery {
   }
 }
 
-const Seo = ({
+export const PureSeo = ({
   lang = 'en',
   title,
   description,
   keywords,
   image,
   pathname,
-}: SeoProps) => {
-  const data: SeoQuery = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          title
-          description
-          keywords
-          baseUrl
-          contentType
-          socials {
-            twitter
-            facebook
-          }
-        }
-      }
-    }
-  `)
-
+  data,
+}: SeoWithDataProps) => {
   const defaults = data.site.siteMetadata
 
   const seo = {
@@ -103,6 +90,28 @@ const Seo = ({
       {seo.twitter && <meta name="twitter:creator" content={seo.twitter} />}
     </Helmet>
   )
+}
+
+const Seo = (props: SeoProps) => {
+  const data: SeoQuery = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+          description
+          keywords
+          baseUrl
+          contentType
+          socials {
+            twitter
+            facebook
+          }
+        }
+      }
+    }
+  `)
+
+  return <PureSeo data={data} {...props} />
 }
 
 export default Seo

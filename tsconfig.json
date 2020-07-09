@@ -10,6 +10,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/utils/hooks/*"],
       "@api/*": ["src/api/*"],
@@ -17,7 +18,7 @@
       "@icons/*": ["src/images/icons/*"],
       "@decorators/*": [".storybook/decorators/*"]
     },
-    "types": ["node", "@emotion/core"]
+    "types": ["node", "jest", "@emotion/core", "testing-library__jest-dom"]
   },
   "include": ["src", ".storybook/**/*.ts", ".storybook/**/*.tsx"]
 }

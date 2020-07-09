@@ -7,6 +7,7 @@ interface HelloProps {
 
 const Hello = ({ children, defaultValue = 0 }: HelloProps) => {
   const [count, setCount] = useState(defaultValue)
+
   return (
     <div>
       <button
