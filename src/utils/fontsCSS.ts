@@ -15,7 +15,7 @@ const fontsCSS: CSSObject[] = [
   },
   {
     '*': {
-      fontFamily: `Manope, ${systemStack}`,
+      fontFamily: `Manrope, ${systemStack}`,
     },
   },
 ]
