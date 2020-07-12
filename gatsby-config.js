@@ -32,7 +32,12 @@ module.exports = {
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaultQuality: 75,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
