@@ -30,8 +30,8 @@ test('renders correctly', () => {
   const { container } = render(<Hello>World</Hello>)
   expect(container.firstChild).toMatchInlineSnapshot(`
     .emotion-0 {
-      background-color: purple;
-      color: white;
+      background-color: #639;
+      color: #fff;
     }
 
     <div>

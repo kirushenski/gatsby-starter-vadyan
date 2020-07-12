@@ -15,7 +15,7 @@
       "@hooks/*": ["src/utils/hooks/*"],
       "@api/*": ["src/api/*"],
       "@images/*": ["src/images/*"],
-      "@icons/*": ["src/images/icons/*"],
+      "@icons/*": ["src/icons/*"],
       "@decorators/*": [".storybook/decorators/*"]
     },
     "types": ["node", "jest", "@emotion/core", "testing-library__jest-dom"]

@@ -16,7 +16,7 @@ module.exports = {
     '@hooks/(.*)': '<rootDir>/src/utils/hooks/$1',
     '@api/(.*)': '<rootDir>/src/api/$1',
     '@images/(.*)': '<rootDir>/src/images/$1',
-    '@icons/(.*)': '<rootDir>/src/images/icons/$1',
+    '@icons/(.*)': '<rootDir>/src/icons/$1',
     '@decorators/(.*)': '<rootDir>/.storybook/decorators/$1',
   },
   globals: {

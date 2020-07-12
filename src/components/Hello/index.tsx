@@ -13,7 +13,7 @@ const Hello = ({ children, defaultValue = 0 }: HelloProps) => {
       <button
         type="button"
         onClick={() => setCount(count + 1)}
-        css={{ backgroundColor: 'purple', color: 'white' }}
+        css={{ backgroundColor: '#639', color: '#fff' }}
       >
         Hello, {children}! Click me
       </button>

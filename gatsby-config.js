@@ -24,12 +24,20 @@ module.exports = {
           '@hooks': 'src/utils/hooks',
           '@api': 'src/api',
           '@images': 'src/images',
-          '@icons': 'src/images/icons',
+          '@icons': 'src/icons',
           '@decorators': '.storybook/decorators',
         },
       },
     },
     'gatsby-plugin-emotion',
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: './src/images',
+      },
+    },
   ],
 }
