@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-const React = require('react')
+import React from 'react'
 const gatsby = jest.requireActual('gatsby')
 
-module.exports = {
+export default {
   ...gatsby,
   graphql: jest.fn(),
   Link: jest

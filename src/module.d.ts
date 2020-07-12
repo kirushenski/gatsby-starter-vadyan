@@ -1,4 +1,11 @@
+type SvgrComponent = React.FC<
+  React.SVGProps<SVGSVGElement> & {
+    title?: string
+  }
+>
+
 declare module '*.svg' {
+  export const ReactComponent: SvgrComponent
   const value: string
   export default value
 }

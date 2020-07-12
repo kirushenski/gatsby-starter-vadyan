@@ -8,8 +8,9 @@ module.exports = {
   testPathIgnorePatterns: ['node_modules', '\\.cache', '<rootDir>.*/public'],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
   moduleNameMapper: {
-    '.+\\.(jpg|jpeg|png|webp|svg|woff|woff2|mp4|webm|mp3)$':
+    '.+\\.(jpg|jpeg|png|webp|woff|woff2|mp4|webm|mp3)$':
       '<rootDir>/__mocks__/file.js',
+    '.+\\.svg$': '<rootDir>/__mocks__/svgr.js',
     '@components/(.*)': '<rootDir>/src/components/$1',
     '@pages/(.*)': '<rootDir>/src/pages/$1',
     '@utils/(.*)': '<rootDir>/src/utils/$1',

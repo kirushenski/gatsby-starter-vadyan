@@ -39,5 +39,11 @@ module.exports = {
         path: './src/images',
       },
     },
+    {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        titleProp: true,
+      },
+    },
   ],
 }

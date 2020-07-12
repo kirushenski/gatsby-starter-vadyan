@@ -54,6 +54,7 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.10.4",
     "@emotion/babel-preset-css-prop": "^10.0.27",
+    "@svgr/webpack": "^5.4.0",
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.5",
     "@types/jest": "^26.0.4",
@@ -81,6 +82,7 @@
     "gatsby-plugin-emotion": "^4.3.10",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.19",
+    "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-source-filesystem": "^2.3.19",
     "gatsby-transformer-sharp": "^2.5.11",
     "husky": "^4.2.5",

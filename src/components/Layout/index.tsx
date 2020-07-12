@@ -1,5 +1,5 @@
 import React from 'react'
-import gatsbyIcon from '@icons/gatsby.svg'
+import { ReactComponent as GatsbyIcon } from '@icons/gatsby.svg'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -9,7 +9,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <header>
-        <img src={gatsbyIcon} alt="" />
+        <GatsbyIcon title="Gatsby logo" width={240} />
         Header
       </header>
       <main>{children}</main>
