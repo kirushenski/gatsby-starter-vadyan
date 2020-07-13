@@ -45,9 +45,9 @@ const Hello = ({ children, onValueChange, defaultValue = 0 }: HelloProps) => {
         }}
         css={{ backgroundColor: '#639', color: '#fff' }}
       >
-        Hello, {children}! Click me &lt;3
+        Hello, {children}! Click me
       </button>
-      <Link to="/another">Link</Link>
+      <Link to="/another/">Link</Link>
       <p>You clicked: {count} times</p>
     </div>
   )
