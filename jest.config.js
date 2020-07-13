@@ -11,9 +11,5 @@ module.exports = {
       lines: 0,
     },
   },
-  projects: [
-    './test/jest.client.js',
-    './test/jest.server.js',
-    './test/jest.lint.js',
-  ],
+  projects: ['./test/jest.client.js', './test/jest.server.js', './test/jest.lint.js'],
 }

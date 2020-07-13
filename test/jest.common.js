@@ -8,8 +8,7 @@ module.exports = {
   testPathIgnorePatterns: ['node_modules', '\\.cache', '<rootDir>.*/public'],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
   moduleNameMapper: {
-    '.+\\.(jpg|jpeg|png|webp|woff|woff2|mp4|webm|mp3)$':
-      '<rootDir>/__mocks__/file.js',
+    '.+\\.(jpg|jpeg|png|webp|woff|woff2|mp4|webm|mp3)$': '<rootDir>/__mocks__/file.js',
     '.+\\.svg$': '<rootDir>/__mocks__/svgr.js',
     '@components/(.*)': '<rootDir>/src/components/$1',
     '@pages/(.*)': '<rootDir>/src/pages/$1',
@@ -23,9 +22,5 @@ module.exports = {
     __PATH_PREFIX__: '',
   },
   setupFiles: [path.join(__dirname, 'loadershim.js')],
-  watchPlugins: [
-    'jest-watch-select-projects',
-    'jest-watch-typeahead/filename',
-    'jest-watch-typeahead/testname',
-  ],
+  watchPlugins: ['jest-watch-select-projects', 'jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
 }

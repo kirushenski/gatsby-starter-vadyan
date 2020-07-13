@@ -22,13 +22,7 @@ module.exports = {
     'plugin:jest-dom/recommended',
     'plugin:testing-library/recommended',
   ],
-  plugins: [
-    '@typescript-eslint',
-    'react-hooks',
-    'jest',
-    'jest-dom',
-    'testing-library',
-  ],
+  plugins: ['@typescript-eslint', 'react-hooks', 'jest', 'jest-dom', 'testing-library'],
   env: {
     browser: true,
     node: true,

@@ -31,15 +31,7 @@ export interface SeoQuery {
   }
 }
 
-export const PureSeo = ({
-  lang = 'en',
-  title,
-  description,
-  keywords,
-  image,
-  pathname,
-  data,
-}: SeoWithDataProps) => {
+export const PureSeo = ({ lang = 'en', title, description, keywords, image, pathname, data }: SeoWithDataProps) => {
   const defaults = data.site.siteMetadata
 
   const seo = {
@@ -74,10 +66,7 @@ export const PureSeo = ({
       )}
       {seo.facebook && <meta property="og:site_name" content={seo.facebook} />}
 
-      <meta
-        name="twitter:card"
-        content={seo.image ? 'summary_large_image' : 'summary'}
-      />
+      <meta name="twitter:card" content={seo.image ? 'summary_large_image' : 'summary'} />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       {seo.url && <meta property="twitter:url" content={seo.url} />}
