@@ -46,5 +46,14 @@ module.exports = {
         titleProp: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        analyzerMode: 'static',
+        defaultSizes: 'gzip',
+        openAnalyzer: false,
+        generateStatsFile: true,
+      },
+    },
   ],
 }
