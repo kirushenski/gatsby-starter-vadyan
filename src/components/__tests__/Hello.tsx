@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import * as Gatsby from 'gatsby'
-import Hello from '@components/Hello'
+import Hello from '@/components/Hello'
 
 const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery')
 useStaticQuery.mockImplementation(() => ({

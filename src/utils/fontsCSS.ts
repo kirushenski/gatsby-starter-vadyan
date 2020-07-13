@@ -1,5 +1,5 @@
 import { CSSObject } from '@emotion/core'
-import Manrope from '../fonts/Manrope.woff2'
+import Manrope from '@/fonts/Manrope.woff2'
 
 const systemStack =
   'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Global } from '@emotion/core'
-import fontsCSS from '@utils/fontsCSS'
+import fontsCSS from '@/utils/fontsCSS'
 
 interface LayoutProps {
   children: React.ReactNode

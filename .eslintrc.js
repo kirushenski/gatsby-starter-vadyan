@@ -30,8 +30,9 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.d.ts'],
+      alias: {
+        map: [['@', './src']],
+        extensions: ['.tsx', '.ts', '.js'],
       },
     },
     react: {
@@ -48,7 +49,6 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 0,
     '@typescript-eslint/no-use-before-define': 0,
     'import/no-named-as-default': 0,
-    'import/no-unresolved': [2, { ignore: ['@'] }],
     'react/prop-types': 0,
     'react/display-name': 0,
     'react-hooks/rules-of-hooks': 2,

@@ -9,13 +9,7 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@pages/*": ["src/pages/*"],
-      "@utils/*": ["src/utils/*"],
-      "@hooks/*": ["src/utils/hooks/*"],
-      "@api/*": ["src/api/*"],
-      "@images/*": ["src/images/*"],
-      "@icons/*": ["src/icons/*"]
+      "@/*": ["src/*"]
     },
     "types": ["node", "jest", "@emotion/core", "testing-library__jest-dom"]
   },

@@ -1,3 +1,6 @@
+const path = require('path')
+
+console.log(path.join(__dirname, 'src'))
 module.exports = {
   siteMetadata: {
     title: 'Gatsby starter',
@@ -18,13 +21,7 @@ module.exports = {
       resolve: 'gatsby-alias-imports',
       options: {
         aliases: {
-          '@components': 'src/components',
-          '@pages': 'src/pages',
-          '@utils': 'src/utils',
-          '@hooks': 'src/utils/hooks',
-          '@api': 'src/api',
-          '@images': 'src/images',
-          '@icons': 'src/icons',
+          '@': path.join(__dirname, 'src'),
         },
       },
     },
@@ -40,7 +37,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: './src/images',
+        path: path.join(__dirname, 'src/images'),
       },
     },
     {

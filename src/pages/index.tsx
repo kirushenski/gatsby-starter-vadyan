@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql, PageProps } from 'gatsby'
 import Img, { FixedObject } from 'gatsby-image'
-import Layout from '@components/Layout'
-import Seo from '@components/Seo'
-import Hello from '@components/Hello'
+import Layout from '@/components/Layout'
+import Seo from '@/components/Seo'
+import Hello from '@/components/Hello'
 
 interface IndexPageData {
   file: {

@@ -3,7 +3,7 @@ import { addParameters, addDecorator } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import { Global } from '@emotion/core'
-import fontsCSS from '@utils/fontsCSS'
+import fontsCSS from '@/utils/fontsCSS'
 
 addParameters({
   actions: { argTypesRegex: '^on.*' },

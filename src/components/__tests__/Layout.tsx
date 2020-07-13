@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import Layout from '@components/Layout'
+import Layout from '@/components/Layout'
 
 test('renders correctly', () => {
   const { container } = render(<Layout>Content</Layout>)

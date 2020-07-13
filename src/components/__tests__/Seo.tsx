@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { render } from '@testing-library/react'
-import { PureSeo as Seo, SeoQuery } from '@components/Seo'
+import { PureSeo as Seo, SeoQuery } from '@/components/Seo'
 
 test('react-helmet added title from siteMetadata', () => {
   const data: SeoQuery = {
