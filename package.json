@@ -18,17 +18,11 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "coverage": "open ./coverage/lcov-report/index.html",
-    "lint": "jest --config test/jest.lint.js",
+    "lint": "eslint . --ext .tsx,.ts,.mdx,.js --fix",
     "type-check": "tsc --noEmit",
-    "validate": "npm run test && npm run type-check && npm run build",
+    "validate": "npm run lint && npm run type-check && npm run test && npm run build",
     "clean": "gatsby clean",
     "setup": "npm i && npm run validate"
-  },
-  "jest-runner-eslint": {
-    "cliOptions": {
-      "ignorePath": "./.gitignore",
-      "fix": true
-    }
   },
   "husky": {
     "hooks": {
@@ -36,8 +30,15 @@
     }
   },
   "lint-staged": {
-    "*.{tsx,ts,mdx,js}": "jest --findRelatedTests"
+    "*.{tsx,ts,mdx,js}": "npm run lint"
   },
+  "eslintIgnore": [
+    "node_modules",
+    "public",
+    "docs",
+    "coverage",
+    "!.storybook"
+  ],
   "browserslist": [
     "last 2 Chrome major versions",
     "last 2 Firefox major versions",
@@ -95,7 +96,6 @@
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-emotion": "^10.0.32",
-    "jest-runner-eslint": "^0.10.0",
     "jest-watch-select-projects": "^2.0.0",
     "jest-watch-typeahead": "^0.6.0",
     "lint-staged": "^10.2.11",

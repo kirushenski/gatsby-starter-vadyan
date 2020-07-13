@@ -1,8 +1,5 @@
 const path = require('path')
-// remove storybook from ignore
-// prettier printWidth
-// children controls
-// defaultValue and onValueChange obsolete controls
+
 module.exports = {
   stories: ['./welcome.stories.mdx', '../src/components/**/*.stories.mdx'],
   addons: ['@storybook/addon-essentials', '@storybook/addon-a11y'],

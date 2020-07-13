@@ -1,7 +1,30 @@
-const commonConfig = require('./test/jest.common')
+const path = require('path')
 
 module.exports = {
-  ...commonConfig,
+  transform: {
+    '^.+\\.[tj]sx?$': path.join(__dirname, 'test/jest-preprocess.js'),
+  },
+  testPathIgnorePatterns: ['node_modules', '\\.cache', '<rootDir>.*/public'],
+  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
+  moduleNameMapper: {
+    '.+\\.(jpg|jpeg|png|webp|woff|woff2|mp4|webm|mp3)$': '<rootDir>/__mocks__/file.js',
+    '.+\\.svg$': '<rootDir>/__mocks__/svgr.js',
+    '@components/(.*)': '<rootDir>/src/components/$1',
+    '@pages/(.*)': '<rootDir>/src/pages/$1',
+    '@utils/(.*)': '<rootDir>/src/utils/$1',
+    '@hooks/(.*)': '<rootDir>/src/utils/hooks/$1',
+    '@api/(.*)': '<rootDir>/src/api/$1',
+    '@images/(.*)': '<rootDir>/src/images/$1',
+    '@icons/(.*)': '<rootDir>/src/icons/$1',
+  },
+  globals: {
+    __PATH_PREFIX__: '',
+  },
+  setupFiles: [path.join(__dirname, 'test/loadershim.js')],
+  watchPlugins: ['jest-watch-select-projects', 'jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  snapshotSerializers: ['jest-emotion'],
   collectCoverageFrom: ['src/**/*.{tsx,ts,js}'],
   coverageThreshold: {
     global: {
@@ -11,5 +34,4 @@ module.exports = {
       lines: 0,
     },
   },
-  projects: ['./test/jest.client.js', './test/jest.server.js', './test/jest.lint.js'],
 }

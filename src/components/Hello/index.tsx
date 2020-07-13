@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { ReactComponent as GatsbyIcon } from '@icons/gatsby.svg'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img, { FixedObject } from 'gatsby-image'
+import { ReactComponent as GatsbyIcon } from '@icons/gatsby.svg'
 
 interface HelloQuery {
   file: {
