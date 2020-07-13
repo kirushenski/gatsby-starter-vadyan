@@ -4,13 +4,17 @@ import Layout from '@components/Layout'
 
 test('renders correctly', () => {
   const { container } = render(<Layout>Content</Layout>)
-  expect(container.firstChild).toMatchInlineSnapshot(`
-    <header>
-      <svg
-        title="Gatsby logo"
-        width="240"
-      />
-      Header
-    </header>
+  expect(container).toMatchInlineSnapshot(`
+    <div>
+      <header>
+        Header
+      </header>
+      <main>
+        Content
+      </main>
+      <footer>
+        Footer
+      </footer>
+    </div>
   `)
 })

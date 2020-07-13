@@ -12,13 +12,16 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
+    "storybook": "NODE_ENV=production start-storybook -s public",
+    "storybook:build": "NODE_ENV=production build-storybook -o docs -s public",
+    "storybook:serve": "serve docs",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "coverage": "open ./coverage/lcov-report/index.html",
     "lint": "jest --config test/jest.lint.js",
     "type-check": "tsc --noEmit",
     "validate": "npm run test && npm run type-check && npm run build",
+    "clean": "gatsby clean",
     "setup": "npm i && npm run validate"
   },
   "jest-runner-eslint": {
@@ -55,6 +58,9 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.10.4",
     "@emotion/babel-preset-css-prop": "^10.0.27",
+    "@storybook/addon-a11y": "next",
+    "@storybook/addon-essentials": "next",
+    "@storybook/react": "next",
     "@svgr/webpack": "^5.4.0",
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.5",
@@ -93,7 +99,8 @@
     "jest-watch-select-projects": "^2.0.0",
     "jest-watch-typeahead": "^0.6.0",
     "lint-staged": "^10.2.11",
-    "prettier": "2.0.5",
+    "prettier": "^2.0.5",
+    "serve": "^11.3.2",
     "typescript": "^3.9.6"
   }
 }

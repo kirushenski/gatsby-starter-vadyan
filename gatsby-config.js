@@ -25,7 +25,6 @@ module.exports = {
           '@api': 'src/api',
           '@images': 'src/images',
           '@icons': 'src/icons',
-          '@decorators': '.storybook/decorators',
         },
       },
     },

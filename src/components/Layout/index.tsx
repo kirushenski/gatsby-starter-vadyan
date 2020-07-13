@@ -1,6 +1,5 @@
 import React from 'react'
 import { Global } from '@emotion/core'
-import { ReactComponent as GatsbyIcon } from '@icons/gatsby.svg'
 import fontsCSS from '@utils/fontsCSS'
 
 interface LayoutProps {
@@ -11,10 +10,7 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Global styles={fontsCSS} />
-      <header>
-        <GatsbyIcon title="Gatsby logo" width={240} />
-        Header
-      </header>
+      <header>Header</header>
       <main>{children}</main>
       <footer>Footer</footer>
     </>
