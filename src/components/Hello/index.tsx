@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTheme } from 'emotion-theming'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img, { FixedObject } from 'gatsby-image'
 import { ReactComponent as GatsbyIcon } from '@/icons/gatsby.svg'
@@ -18,6 +19,8 @@ interface HelloProps {
 }
 
 const Hello = ({ children, onValueChange, defaultValue = 0 }: HelloProps) => {
+  const { colors, step } = useTheme()
+
   const data: HelloQuery = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "react.png" }) {
@@ -34,7 +37,7 @@ const Hello = ({ children, onValueChange, defaultValue = 0 }: HelloProps) => {
 
   return (
     <div>
-      <GatsbyIcon width={120} />
+      <GatsbyIcon width={step * 15} />
       <Img fixed={data.file.childImageSharp.fixed} alt="React logo" />
       <button
         type="button"
@@ -43,7 +46,7 @@ const Hello = ({ children, onValueChange, defaultValue = 0 }: HelloProps) => {
           setCount(newValue)
           if (onValueChange) onValueChange(newValue)
         }}
-        css={{ backgroundColor: '#639', color: '#fff' }}
+        css={{ backgroundColor: colors.brand, color: colors.white }}
       >
         Hello, {children}! Click me
       </button>

@@ -1,5 +1,6 @@
 import Typography from 'typography'
 import { CSSObject } from '@emotion/core'
+import theme from '@/utils/theme'
 import Manrope from '@/fonts/Manrope.woff2'
 
 const systemStack = [
@@ -19,9 +20,8 @@ const typography = new Typography({
   scaleRatio: 2,
   headerFontFamily: ['Manrope', ...systemStack],
   bodyFontFamily: ['Manrope', ...systemStack],
-  // TODO Replace with theme variables
-  headerColor: '#000',
-  bodyColor: '#000',
+  headerColor: theme.colors.dark,
+  bodyColor: theme.colors.dark,
   headerWeight: 700,
   bodyWeight: 400,
   boldWeight: 700,

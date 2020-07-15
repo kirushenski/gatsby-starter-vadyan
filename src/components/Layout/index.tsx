@@ -1,8 +1,4 @@
 import React from 'react'
-import { Global } from '@emotion/core'
-import { fontsCSS } from '@/utils/typography'
-
-// TODO Think about including global styles in gatsby-browser instead
 
 interface LayoutProps {
   children: React.ReactNode
@@ -11,8 +7,20 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <Global styles={fontsCSS} />
-      <header>Header</header>
+      <header>
+        <h2
+          css={{
+            fontSize: 100,
+            fontWeight: 200,
+            transition: 'font-weight ease 2000ms',
+            ':hover': {
+              fontWeight: 800,
+            },
+          }}
+        >
+          Header
+        </h2>
+      </header>
       <main>{children}</main>
       <footer>Footer</footer>
     </>

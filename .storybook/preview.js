@@ -2,8 +2,8 @@ import React from 'react'
 import { addParameters, addDecorator } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-import { Global } from '@emotion/core'
-import { fontsCSS } from '@/utils/typography'
+import Wrapper from '@/components/Wrapper'
+import typography from '@/utils/typography'
 
 addParameters({
   actions: { argTypesRegex: '^on.*' },
@@ -16,12 +16,9 @@ addParameters({
   },
 })
 
-addDecorator(storyFn => (
-  <>
-    <Global styles={fontsCSS} />
-    {storyFn()}
-  </>
-))
+addDecorator(storyFn => <Wrapper>{storyFn()}</Wrapper>)
+
+typography.injectStyles()
 
 // Override some globals so Gatsby Link doesn't crash Storybook
 global.___loader = {
