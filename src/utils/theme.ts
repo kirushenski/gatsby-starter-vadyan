@@ -3,6 +3,7 @@ const colors = {
   black: '#000',
   dark: '#333',
   brand: '#639',
+  brandHover: '#452475',
 }
 
 const theme = {
@@ -13,6 +14,7 @@ const theme = {
     color: colors.black,
     offset: 2,
   },
+  transitionTime: 300,
 }
 
 export default theme

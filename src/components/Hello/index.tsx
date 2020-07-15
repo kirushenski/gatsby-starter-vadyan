@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useTheme } from 'emotion-theming'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img, { FixedObject } from 'gatsby-image'
+import { rem } from 'polished'
 import { ReactComponent as GatsbyIcon } from '@/icons/gatsby.svg'
 
 interface HelloQuery {
@@ -46,11 +47,19 @@ const Hello = ({ children, onValueChange, defaultValue = 0 }: HelloProps) => {
           setCount(newValue)
           if (onValueChange) onValueChange(newValue)
         }}
-        css={{ backgroundColor: colors.brand, color: colors.white }}
+        css={{
+          padding: step,
+          backgroundColor: colors.brand,
+          color: colors.white,
+          borderRadius: 4,
+          ':hover': { backgroundColor: colors.brandHover },
+        }}
       >
         Hello, {children}! Click me
       </button>
-      <Link to="/another/">Link</Link>
+      <Link to="/another/" css={{ fontSize: rem(24) }}>
+        Go to another page
+      </Link>
       <p>You clicked: {count} times</p>
     </div>
   )
