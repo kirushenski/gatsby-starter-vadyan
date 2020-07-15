@@ -11,7 +11,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "types": ["node", "jest", "@emotion/core", "testing-library__jest-dom"]
+    "types": ["node", "@emotion/core", "jest", "testing-library__jest-dom"]
   },
-  "include": ["src", ".storybook/**/*.ts", ".storybook/**/*.tsx"]
+  "exclude": ["cypress"]
 }

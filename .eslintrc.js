@@ -1,16 +1,19 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
     ecmaVersion: 2020,
     sourceType: 'module',
+  },
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
   },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
@@ -22,23 +25,6 @@ module.exports = {
     'plugin:jest-dom/recommended',
     'plugin:testing-library/recommended',
   ],
-  plugins: ['@typescript-eslint', 'react-hooks', 'jest', 'jest-dom', 'testing-library'],
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
-  },
-  settings: {
-    'import/resolver': {
-      alias: {
-        map: [['@', './src']],
-        extensions: ['.tsx', '.ts', '.js'],
-      },
-    },
-    react: {
-      version: 'detect',
-    },
-  },
   rules: {
     '@typescript-eslint/ban-ts-comment': 1,
     '@typescript-eslint/naming-convention': 0,
@@ -53,6 +39,17 @@ module.exports = {
     'react/display-name': 0,
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 1,
+  },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [['@', './src']],
+        extensions: ['.tsx', '.ts', '.js'],
+      },
+    },
+    react: {
+      version: 'detect',
+    },
   },
   overrides: [
     {

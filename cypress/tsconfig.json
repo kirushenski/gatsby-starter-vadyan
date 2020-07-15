@@ -1,0 +1,7 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["node", "@emotion/core", "cypress", "testing-library__cypress"]
+  },
+  "exclude": []
+}

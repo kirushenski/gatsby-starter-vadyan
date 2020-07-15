@@ -2,7 +2,7 @@ import React from 'react'
 import 'focus-visible'
 import { ThemeProvider } from 'emotion-theming'
 import { Global } from '@emotion/core'
-import { buttons, transitions, textInputs } from 'polished'
+import { buttons, transitions } from 'polished'
 import theme from '@/utils/theme'
 import { fontsCSS } from '@/utils/typography'
 
