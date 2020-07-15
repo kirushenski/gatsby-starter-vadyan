@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
+    "target": "ES2019",
     "module": "CommonJS",
     "jsx": "react",
     "moduleResolution": "node",
@@ -13,5 +13,5 @@
     },
     "types": ["node", "@emotion/core", "jest", "testing-library__jest-dom"]
   },
-  "exclude": ["cypress"]
+  "include": ["src", ".storybook/**/*.ts", ".storybook/**/*.tsx"]
 }

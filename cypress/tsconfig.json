@@ -3,5 +3,5 @@
   "compilerOptions": {
     "types": ["node", "@emotion/core", "cypress", "testing-library__cypress"]
   },
-  "exclude": []
+  "include": ["."]
 }

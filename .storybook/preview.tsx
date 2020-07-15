@@ -4,15 +4,14 @@ import { action } from '@storybook/addon-actions'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import Wrapper from '@/components/Wrapper'
 import typography from '@/utils/typography'
+import theme from '@/utils/theme'
 
 addParameters({
   actions: { argTypesRegex: '^on.*' },
+  grid: { cellSize: theme.step },
   viewport: { viewports: INITIAL_VIEWPORTS },
   backgrounds: {
-    values: [
-      { name: 'black', value: '#000' },
-      { name: 'purple', value: '#639' },
-    ],
+    values: Object.entries(theme.colors).map(([name, value]) => ({ name, value })),
   },
 })
 
