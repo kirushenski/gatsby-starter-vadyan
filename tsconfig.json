@@ -9,9 +9,10 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
+      "@test-utils": ["test/test-utils.ts"],
       "@/*": ["src/*"]
     },
     "types": ["node", "@emotion/core", "jest", "testing-library__jest-dom"]
   },
-  "include": ["src", ".storybook/**/*.ts", ".storybook/**/*.tsx"]
+  "include": ["src", "test", ".storybook/**/*.ts", ".storybook/**/*.tsx"]
 }

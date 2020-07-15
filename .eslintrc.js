@@ -43,7 +43,10 @@ module.exports = {
   settings: {
     'import/resolver': {
       alias: {
-        map: [['@', './src']],
+        map: [
+          ['@test-utils', './test/test-utils.ts'],
+          ['@', './src'],
+        ],
         extensions: ['.tsx', '.ts', '.js'],
       },
     },
@@ -55,6 +58,16 @@ module.exports = {
     {
       files: ['*.mdx'],
       extends: ['plugin:mdx/overrides'],
+    },
+    {
+      files: ['**/__tests__/**/*.js'],
+      settings: {
+        'import/resolver': {
+          jest: {
+            jestConfigFile: './jest.config.js',
+          },
+        },
+      },
     },
   ],
 }
