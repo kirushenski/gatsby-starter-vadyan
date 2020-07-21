@@ -9,7 +9,7 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@test-utils": ["test/test-utils.ts"],
+      "@test-utils": ["test/test-utils.tsx"],
       "@/*": ["src/*"]
     },
     "types": ["node", "@emotion/core", "jest", "testing-library__jest-dom"]

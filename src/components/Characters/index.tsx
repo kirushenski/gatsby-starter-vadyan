@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import useDebounce from '@/utils/useDebounce'
 
-const GET_CHARACTERS_DATA = gql`
+export const GET_CHARACTERS_DATA = gql`
   query GetCharactersData($id: ID) {
     characters {
       info {
@@ -16,7 +16,7 @@ const GET_CHARACTERS_DATA = gql`
   }
 `
 
-interface CharactersData {
+export interface CharactersData {
   characters: {
     info: {
       count: number
