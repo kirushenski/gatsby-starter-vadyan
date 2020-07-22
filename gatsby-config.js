@@ -62,5 +62,20 @@ module.exports = {
         omitGoogleFont: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Gatsby Starter',
+        short_name: 'Gatsby Starter',
+        description: 'Gatsby starter for personal projects',
+        lang: 'en',
+        start_url: '/',
+        display: 'standalone',
+        icon: 'src/images/favicon.png',
+        background_color: '#639',
+        theme_color: '#639',
+        legacy: false,
+      },
+    },
   ],
 }

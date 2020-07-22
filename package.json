@@ -106,6 +106,7 @@
     "eslint-plugin-testing-library": "^3.3.1",
     "gatsby-alias-imports": "^1.0.4",
     "gatsby-plugin-emotion": "^4.3.10",
+    "gatsby-plugin-manifest": "^2.4.20",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.19",
     "gatsby-plugin-svgr": "^2.0.2",
