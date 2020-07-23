@@ -68,7 +68,9 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-typography": "^0.16.19",
-    "typography": "^0.16.19"
+    "typography": "^0.16.19",
+    "workbox-precaching": "^5.1.3",
+    "workbox-routing": "^5.1.3"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.10.4",
@@ -107,6 +109,7 @@
     "gatsby-alias-imports": "^1.0.4",
     "gatsby-plugin-emotion": "^4.3.10",
     "gatsby-plugin-manifest": "^2.4.20",
+    "gatsby-plugin-offline": "^3.2.20",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.19",
     "gatsby-plugin-svgr": "^2.0.2",
