@@ -21,6 +21,9 @@ const globalCSS: CSSObject = {
       color: theme.colors.brand,
     },
   },
+  svg: {
+    fill: 'currentColor',
+  },
 }
 
 export default globalCSS

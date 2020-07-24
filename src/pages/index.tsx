@@ -4,6 +4,7 @@ import Img, { FixedObject } from 'gatsby-image'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import Hello from '@/components/Hello'
+import ExternalLink from '@/components/ExternalLink'
 
 interface IndexPageData {
   file: {
@@ -20,6 +21,7 @@ const IndexPage = ({ data }: PageProps<IndexPageData>) => {
       <h1>Gatsby Starter</h1>
       <Img fixed={data.file.childImageSharp.fixed} alt="React logo" />
       <Hello>World</Hello>
+      <ExternalLink to="https://www.google.com/">Google</ExternalLink>
     </Layout>
   )
 }

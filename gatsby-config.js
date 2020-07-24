@@ -17,6 +17,8 @@ module.exports = {
     },
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-emotion',
     {
       resolve: 'gatsby-alias-imports',
       options: {
@@ -25,21 +27,19 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-emotion',
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        defaultQuality: 75,
-      },
-    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: path.join(__dirname, 'src/images'),
       },
     },
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaultQuality: 75,
+      },
+    },
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-svgr',
       options: {
