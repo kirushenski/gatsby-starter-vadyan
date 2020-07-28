@@ -3,8 +3,8 @@ import { addParameters, addDecorator } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import RootWrapper from '@/components/RootWrapper'
-import typography from '@/utils/typography'
-import theme from '@/utils/theme'
+import typography from '../config/typography'
+import theme from '../config/theme'
 
 addParameters({
   actions: { argTypesRegex: '^on.*' },

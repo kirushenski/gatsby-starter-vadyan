@@ -1,28 +1,26 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { render } from '@test-utils'
-import { PureSeo as Seo, SeoQuery } from '@/components/Seo'
+import * as Gatsby from 'gatsby'
+import Seo from '@/components/Seo'
+
+const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery')
+useStaticQuery.mockImplementation(() => ({
+  site: {
+    siteMetadata: {
+      title: 'Gatsby starter',
+      description: 'Gatsby starter for personal projects',
+      keywords: ['gatsby', 'starter'],
+      baseUrl: '',
+      lang: 'en',
+      facebookUsername: '',
+      twitterUsername: '',
+    },
+  },
+}))
 
 test('react-helmet added title from siteMetadata', () => {
-  const data: SeoQuery = {
-    site: {
-      siteMetadata: {
-        title: 'Gatsby starter',
-        description: 'Gatsby starter for personal projects',
-        keywords: ['gatsby', 'starter'],
-        baseUrl: '',
-        contentType: 'website',
-        socials: {
-          twitter: '',
-          facebook: '',
-        },
-      },
-    },
-  }
-
-  const defaults = data.site.siteMetadata
-
-  render(<Seo data={data} />)
+  render(<Seo />)
   const helmet = Helmet.peek()
-  expect(helmet.title).toBe(defaults.title)
+  expect(helmet.title).toBe('Gatsby starter')
 })

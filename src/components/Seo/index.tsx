@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
 interface SeoProps {
-  lang?: string
   title?: string
   description?: string
   keywords?: string[]
@@ -11,27 +10,36 @@ interface SeoProps {
   pathname?: string
 }
 
-interface SeoWithDataProps extends SeoProps {
-  data: SeoQuery
-}
-
-export interface SeoQuery {
+interface SeoQuery {
   site: {
     siteMetadata: {
       title: string
       description: string
       keywords: string[]
       baseUrl: string
-      contentType: 'website' | 'article'
-      socials: {
-        twitter: string
-        facebook: string
-      }
+      lang: string
+      facebookUsername: string
+      twitterUsername: string
     }
   }
 }
 
-export const PureSeo = ({ lang = 'en', title, description, keywords, image, pathname, data }: SeoWithDataProps) => {
+const Seo = ({ title, description, keywords, image, pathname }: SeoProps) => {
+  const data: SeoQuery = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+          description
+          keywords
+          baseUrl
+          lang
+          facebookUsername
+          twitterUsername
+        }
+      }
+    }
+  `)
   const defaults = data.site.siteMetadata
 
   const seo = {
@@ -39,22 +47,22 @@ export const PureSeo = ({ lang = 'en', title, description, keywords, image, path
     description: description || defaults.description,
     keywords: keywords || defaults.keywords,
     url: pathname && `${defaults.baseUrl}${pathname}`,
-    contentType: defaults.contentType,
-    twitter: defaults.socials.twitter && `@${defaults.socials.twitter}`,
-    facebook: defaults.socials.facebook,
+    lang: defaults.lang,
+    facebook: defaults.facebookUsername,
+    twitter: defaults.twitterUsername && `@${defaults.twitterUsername}`,
     image: image && `${defaults.baseUrl}${image}`,
   }
 
   return (
     <Helmet>
-      <html lang={lang} />
+      <html lang={seo.lang} />
       <title>{seo.title}</title>
       {seo.url && <link rel="canonical" href={seo.url} />}
       <meta name="description" content={seo.description} />
       <meta name="keywords" content={seo.keywords.join(', ')} />
       {seo.image && <meta name="image" content={seo.image} />}
 
-      <meta name="og:type" content={seo.contentType} />
+      <meta name="og:type" content="website" />
       <meta name="og:title" content={seo.title} />
       <meta name="og:description" content={seo.description} />
       {seo.url && <meta property="og:url" content={seo.url} />}
@@ -79,28 +87,6 @@ export const PureSeo = ({ lang = 'en', title, description, keywords, image, path
       {seo.twitter && <meta name="twitter:creator" content={seo.twitter} />}
     </Helmet>
   )
-}
-
-const Seo = (props: SeoProps) => {
-  const data: SeoQuery = useStaticQuery(graphql`
-    {
-      site {
-        siteMetadata {
-          title
-          description
-          keywords
-          baseUrl
-          contentType
-          socials {
-            twitter
-            facebook
-          }
-        }
-      }
-    }
-  `)
-
-  return <PureSeo data={data} {...props} />
 }
 
 export default Seo

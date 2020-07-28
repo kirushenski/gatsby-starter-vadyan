@@ -1,10 +1,12 @@
 import React from 'react'
 import { Global } from '@emotion/core'
+import { useTheme } from 'emotion-theming'
 import { buttons, transitions } from 'polished'
-import theme from '@/utils/theme'
 import Manrope from '@/fonts/Manrope.woff2'
 
 const GlobalStyles = () => {
+  const { colors, time } = useTheme()
+
   return (
     <Global
       styles={[
@@ -13,18 +15,18 @@ const GlobalStyles = () => {
             outline: 'none',
           },
           ':focus': {
-            outline: `${theme.focus.size}px solid ${theme.focus.color}`,
-            outlineOffset: theme.focus.offset,
+            outline: `3px solid ${colors.black}`,
+            outlineOffset: 2,
           },
           [buttons()]: {
             border: 'none',
-            ...transitions(['color', 'background-color'], `${theme.transitionTime}ms ease`),
+            ...transitions(['color', 'background-color'], `${time}ms ease`),
           },
           a: {
-            color: theme.colors.dark,
-            ...transitions(['color'], `${theme.transitionTime}ms ease`),
+            color: colors.dark,
+            ...transitions(['color'], `${time}ms ease`),
             ':hover': {
-              color: theme.colors.brand,
+              color: colors.brand,
             },
           },
           svg: {

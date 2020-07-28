@@ -1,20 +1,15 @@
 const path = require('path')
+const config = require('./config')
 
-console.log(path.join(__dirname, 'src'))
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby starter',
-    description: 'Gatsby starter for personal projects',
-    keywords: ['gatsby', 'starter'],
-    /* Absolute deployment path without trailing slash */
-    baseUrl: '',
-    /* Used for facebook SEO. Pass 'website' or 'article' */
-    contentType: 'website',
-    /* Author usernames on social accounts */
-    socials: {
-      twitter: '',
-      facebook: '',
-    },
+    title: config.title,
+    description: config.description,
+    keywords: config.keywords,
+    baseUrl: config.baseUrl,
+    lang: config.lang,
+    facebookUsername: config.facebookUsername,
+    twitterUsername: config.twitterUsername,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -58,22 +53,22 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: 'src/utils/typography',
+        pathToConfigModule: 'config/typography',
         omitGoogleFont: true,
       },
     },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gatsby Starter',
-        short_name: 'Gatsby Starter',
-        description: 'Gatsby starter for personal projects',
-        lang: 'en',
         start_url: '/',
         display: 'standalone',
-        icon: 'src/images/favicon.png',
-        background_color: '#639',
-        theme_color: '#639',
+        name: config.title,
+        short_name: config.shortTitle,
+        description: config.description,
+        lang: config.lang,
+        icon: config.favicon,
+        theme_color: config.themeColor,
+        background_color: config.backgroundColor,
       },
     },
     'gatsby-plugin-offline',

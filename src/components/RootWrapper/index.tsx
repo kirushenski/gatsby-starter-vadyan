@@ -4,8 +4,8 @@ import { ApolloProvider } from '@apollo/client'
 import { MockedProvider, MockedResponse } from '@apollo/client/testing'
 import { ThemeProvider } from 'emotion-theming'
 import GlobalStyles from '@/components/GlobalStyles'
-import theme from '@/utils/theme'
 import client from '@/utils/apollo'
+import theme from '../../../config/theme'
 
 interface WrapperProps {
   children: React.ReactNode
