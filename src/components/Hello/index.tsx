@@ -20,7 +20,7 @@ interface HelloProps {
 }
 
 const Hello = ({ children, onValueChange, defaultValue = 0 }: HelloProps) => {
-  const { colors, step } = useTheme()
+  const { colors } = useTheme()
 
   const data: HelloQuery = useStaticQuery(graphql`
     query {
@@ -38,7 +38,7 @@ const Hello = ({ children, onValueChange, defaultValue = 0 }: HelloProps) => {
 
   return (
     <div>
-      <GatsbyIcon width={step * 15} />
+      <GatsbyIcon width={120} />
       <Img fixed={data.file.childImageSharp.fixed} alt="React logo" />
       <button
         type="button"
@@ -48,7 +48,7 @@ const Hello = ({ children, onValueChange, defaultValue = 0 }: HelloProps) => {
           if (onValueChange) onValueChange(newValue)
         }}
         css={{
-          padding: step,
+          padding: 8,
           backgroundColor: colors.brand,
           color: colors.white,
           borderRadius: 4,

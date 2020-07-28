@@ -6,6 +6,5 @@ module.exports = {
     brand: '#639',
     brandHover: '#452475',
   },
-  step: 8,
   time: 300,
 }

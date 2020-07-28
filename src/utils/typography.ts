@@ -1,5 +1,5 @@
 import Typography from 'typography'
-import theme from './theme'
+import theme from '../../config/theme'
 
 const systemStack = [
   'system-ui',
@@ -27,4 +27,5 @@ const typography = new Typography({
   includeNormalize: true,
 })
 
+export const { scale, rhythm, options } = typography
 export default typography
