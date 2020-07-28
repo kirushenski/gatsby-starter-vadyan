@@ -1,14 +1,14 @@
 import React from 'react'
 import { render, RenderOptions } from '@testing-library/react'
 import { MockedResponse } from '@apollo/client/testing'
-import Wrapper from '@/components/Wrapper'
+import RootWrapper from '@/components/RootWrapper'
 
 interface Options extends RenderOptions {
   apolloMocks?: MockedResponse[]
 }
 
 const customRender = (ui: React.ReactElement, { apolloMocks, ...options }: Options = {}) =>
-  render(ui, { wrapper: ({ children }) => <Wrapper apolloMocks={apolloMocks}>{children}</Wrapper>, ...options })
+  render(ui, { wrapper: ({ children }) => <RootWrapper apolloMocks={apolloMocks}>{children}</RootWrapper>, ...options })
 
 export * from '@testing-library/react'
 

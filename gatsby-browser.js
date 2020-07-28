@@ -1,4 +1,4 @@
 import React from 'react'
-import Wrapper from '@/components/Wrapper'
+import RootWrapper from '@/components/RootWrapper'
 
-export const wrapRootElement = ({ element }) => <Wrapper>{element}</Wrapper>
+export const wrapRootElement = ({ element }) => <RootWrapper>{element}</RootWrapper>

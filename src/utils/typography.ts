@@ -1,7 +1,5 @@
 import Typography from 'typography'
-import { CSSObject } from '@emotion/core'
 import theme from '@/utils/theme'
-import Manrope from '@/fonts/Manrope.woff2'
 
 const systemStack = [
   'system-ui',
@@ -28,16 +26,5 @@ const typography = new Typography({
   blockMarginBottom: 1,
   includeNormalize: true,
 })
-
-export const fontsCSS: CSSObject[] = [
-  {
-    '@font-face': {
-      fontFamily: 'Manrope',
-      src: `url(${Manrope}) format('woff2-variations')`,
-      fontDisplay: 'swap',
-      fontWeight: '200 800' as any,
-    },
-  },
-]
 
 export default typography

@@ -2,7 +2,7 @@ import React from 'react'
 import { addParameters, addDecorator } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
-import Wrapper from '@/components/Wrapper'
+import RootWrapper from '@/components/RootWrapper'
 import typography from '@/utils/typography'
 import theme from '@/utils/theme'
 
@@ -15,7 +15,7 @@ addParameters({
   },
 })
 
-addDecorator(storyFn => <Wrapper>{storyFn()}</Wrapper>)
+addDecorator(storyFn => <RootWrapper>{storyFn()}</RootWrapper>)
 
 typography.injectStyles()
 

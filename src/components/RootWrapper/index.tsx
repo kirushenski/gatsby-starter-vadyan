@@ -3,10 +3,8 @@ import 'focus-visible'
 import { ApolloProvider } from '@apollo/client'
 import { MockedProvider, MockedResponse } from '@apollo/client/testing'
 import { ThemeProvider } from 'emotion-theming'
-import { Global } from '@emotion/core'
+import GlobalStyles from '@/components/GlobalStyles'
 import theme from '@/utils/theme'
-import { fontsCSS } from '@/utils/typography'
-import globalCSS from '@/utils/globalCSS'
 import client from '@/utils/apollo'
 
 interface WrapperProps {
@@ -20,7 +18,7 @@ const Wrapper = ({ children, apolloMocks }: WrapperProps) => {
   return (
     <ApolloWrapper client={client} mocks={apolloMocks} addTypename={false}>
       <ThemeProvider theme={theme}>
-        <Global styles={[...fontsCSS, globalCSS]} />
+        <GlobalStyles />
         {children}
       </ThemeProvider>
     </ApolloWrapper>
