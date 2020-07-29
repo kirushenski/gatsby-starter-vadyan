@@ -3,9 +3,10 @@ import { Global } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 import { buttons, transitions } from 'polished'
 import Manrope from '@/fonts/Manrope.woff2'
+import { Theme } from '../../../config/theme'
 
 const GlobalStyles = () => {
-  const { colors, time } = useTheme()
+  const { colors, time } = useTheme<Theme>()
 
   return (
     <Global
@@ -15,7 +16,7 @@ const GlobalStyles = () => {
             outline: 'none',
           },
           ':focus': {
-            outline: `3px solid ${colors.black}`,
+            outline: `3px solid ${colors.purple5}`,
             outlineOffset: 2,
           },
           [buttons()]: {
@@ -23,11 +24,9 @@ const GlobalStyles = () => {
             ...transitions(['color', 'background-color'], `${time}ms ease`),
           },
           a: {
-            color: colors.dark,
+            textDecoration: 'none',
+            color: colors.purple5,
             ...transitions(['color'], `${time}ms ease`),
-            ':hover': {
-              color: colors.brand,
-            },
           },
           svg: {
             fill: 'currentColor',

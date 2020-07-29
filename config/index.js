@@ -1,5 +1,3 @@
-const theme = require('./theme')
-
 module.exports = {
   title: 'Gatsby starter',
   shortTitle: 'Gatsby starter',
@@ -12,6 +10,6 @@ module.exports = {
   facebookUsername: '',
   twitterUsername: '',
   favicon: 'src/images/favicon.png',
-  themeColor: theme.colors.brand,
-  backgroundColor: theme.colors.brand,
+  themeColor: '#639',
+  backgroundColor: '#639',
 }

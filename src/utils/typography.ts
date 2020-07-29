@@ -13,13 +13,13 @@ const systemStack = [
 ]
 
 const typography = new Typography({
-  baseFontSize: '16px',
+  baseFontSize: '18px',
   baseLineHeight: 1.5,
   scaleRatio: 2,
   headerFontFamily: ['Manrope', ...systemStack],
   bodyFontFamily: ['Manrope', ...systemStack],
-  headerColor: theme.colors.dark,
-  bodyColor: theme.colors.dark,
+  headerColor: theme.colors.purple5,
+  bodyColor: theme.colors.purple5,
   headerWeight: 700,
   bodyWeight: 400,
   boldWeight: 700,

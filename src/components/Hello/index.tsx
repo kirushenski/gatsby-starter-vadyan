@@ -3,7 +3,6 @@ import { useTheme } from 'emotion-theming'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img, { FixedObject } from 'gatsby-image'
 import { rem } from 'polished'
-import { ReactComponent as GatsbyIcon } from '@/icons/gatsby.svg'
 
 interface HelloQuery {
   file: {
@@ -38,7 +37,6 @@ const Hello = ({ children, onValueChange, defaultValue = 0 }: HelloProps) => {
 
   return (
     <div>
-      <GatsbyIcon width={120} />
       <Img fixed={data.file.childImageSharp.fixed} alt="React logo" />
       <button
         type="button"

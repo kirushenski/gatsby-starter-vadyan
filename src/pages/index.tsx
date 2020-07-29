@@ -1,41 +1,32 @@
 import React from 'react'
-import { graphql, PageProps } from 'gatsby'
-import Img, { FixedObject } from 'gatsby-image'
+import { useTheme } from 'emotion-theming'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
-import Hello from '@/components/Hello'
-import ExternalLink from '@/components/ExternalLink'
+import { Theme } from '../../config/theme'
 
-interface IndexPageData {
-  file: {
-    childImageSharp: {
-      fixed: FixedObject
-    }
-  }
-}
+const IndexPage = () => {
+  const { colors } = useTheme<Theme>()
 
-const IndexPage = ({ data }: PageProps<IndexPageData>) => {
   return (
     <Layout>
       <Seo />
-      <h1>Gatsby Starter</h1>
-      <Img fixed={data.file.childImageSharp.fixed} alt="React logo" />
-      <Hello>World</Hello>
-      <ExternalLink to="https://www.google.com/">Google</ExternalLink>
+      <h1>Quick start</h1>
+      <p>Start new project with Gatsby CLI:</p>
+      <pre>
+        <code
+          css={{
+            padding: '16px 32px',
+            backgroundColor: colors.purple5,
+            color: colors.purple90,
+            borderRadius: 4,
+            '::before': { content: '"$ "' },
+          }}
+        >
+          gatsby new project-name https://github.com/p1t1ch/gatsby-starter
+        </code>
+      </pre>
     </Layout>
   )
 }
-
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "react.png" }) {
-      childImageSharp {
-        fixed(width: 800, traceSVG: { color: "#639" }) {
-          ...GatsbyImageSharpFixed_withWebp_tracedSVG
-        }
-      }
-    }
-  }
-`
 
 export default IndexPage
