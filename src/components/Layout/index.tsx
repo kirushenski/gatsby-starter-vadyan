@@ -49,7 +49,19 @@ const Layout = ({ children }: LayoutProps) => {
           </Link>
         </nav>
       </header>
-      <main css={{ backgroundColor: colors.purple60, padding: '64px 16px', textAlign: 'center' }}>{children}</main>
+      <main
+        css={{
+          display: 'grid',
+          gridAutoFlow: 'row',
+          justifyItems: 'center',
+          alignContent: 'start',
+          gridGap: 24,
+          padding: '48px 16px',
+          backgroundColor: colors.purple60,
+        }}
+      >
+        {children}
+      </main>
       <footer
         css={{
           backgroundColor: colors.purple90,

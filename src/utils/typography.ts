@@ -23,7 +23,7 @@ const typography = new Typography({
   headerWeight: 700,
   bodyWeight: 400,
   boldWeight: 700,
-  blockMarginBottom: 1,
+  blockMarginBottom: 0,
   includeNormalize: true,
 })
 
