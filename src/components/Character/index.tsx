@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery, gql } from '@apollo/client'
 import { useTheme } from 'emotion-theming'
-import { Theme } from '../../../config/theme'
+import { Theme } from '@theme'
 
 export const GET_CHARACTER_DATA = gql`
   query GetCharacterData($id: ID) {

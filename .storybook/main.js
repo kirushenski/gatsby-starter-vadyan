@@ -28,6 +28,7 @@ module.exports = {
 
     // Add aliases support
     config.resolve.alias = {
+      '@theme': path.join(__dirname, '../config/theme.ts'),
       '@': path.join(__dirname, '../src'),
     }
 

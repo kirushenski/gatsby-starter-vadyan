@@ -5,8 +5,7 @@ import Img, { FixedObject } from 'gatsby-image'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import SelectCharacter from '@/components/SelectCharacter'
-import { Theme } from '../../config/theme'
-import { isInlineFragment } from '@apollo/client/utilities/graphql/storeUtils'
+import { Theme } from '@theme'
 
 interface ShowcasePageData {
   file: {

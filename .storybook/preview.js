@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import RootWrapper from '@/components/RootWrapper'
 import typography from '@/utils/typography'
-import theme from '../config/theme'
+import theme from '@theme'
 
 addParameters({
   actions: { argTypesRegex: '^on.*' },

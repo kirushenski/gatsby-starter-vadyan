@@ -18,6 +18,7 @@ module.exports = {
       resolve: 'gatsby-alias-imports',
       options: {
         aliases: {
+          '@theme': path.join(__dirname, 'config/theme.ts'),
           '@': path.join(__dirname, 'src'),
         },
       },

@@ -46,6 +46,7 @@ module.exports = {
       alias: {
         map: [
           ['@test-utils', './test/test-utils.tsx'],
+          ['@theme', './config/theme.ts'],
           ['@', './src'],
         ],
         extensions: ['.tsx', '.ts', '.js'],

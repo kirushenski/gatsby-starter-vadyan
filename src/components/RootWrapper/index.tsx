@@ -5,7 +5,7 @@ import { MockedProvider, MockedResponse } from '@apollo/client/testing'
 import { ThemeProvider } from 'emotion-theming'
 import GlobalStyles from '@/components/GlobalStyles'
 import client from '@/utils/apollo'
-import theme from '../../../config/theme'
+import theme from '@theme'
 
 interface WrapperProps {
   children: React.ReactNode

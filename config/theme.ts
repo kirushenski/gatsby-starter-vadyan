@@ -16,12 +16,55 @@ const colors = {
   purple90: '#362066',
 }
 
+// TODO Write interface for theme
+
+const breakpoints = {
+  lg: 1440,
+  md: 968,
+  sm: 768,
+}
+
+const typography = {
+  breakpoints: ['lg', 'sm'],
+  base: 18,
+  styles: {
+    title: {
+      desktop: {
+        fontWeight: 700,
+        fontSize: 40,
+        lineHeight: 1.2,
+      },
+      mobile: {
+        fontSize: 24,
+      },
+    },
+  },
+  stack: [
+    'system-ui',
+    '-apple-system',
+    'BlinkMacSystemFont',
+    '"Segoe UI"',
+    'Roboto',
+    '"Helvetica Neue"',
+    'Arial',
+    'sans-serif',
+  ],
+}
+
+const shadows = {
+  basic: `0 0 8px 0 ${colors.purple90}`,
+}
+
+const timings = {
+  basic: `300ms ease`,
+}
+
 const theme = {
   colors,
-  shadows: {
-    basic: `0 0 8px 0 ${colors.purple90}`,
-  },
-  time: 300,
+  breakpoints,
+  typography,
+  shadows,
+  timings,
 }
 
 export type Theme = typeof theme

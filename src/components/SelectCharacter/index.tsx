@@ -3,7 +3,7 @@ import { useQuery, gql } from '@apollo/client'
 import { useTheme } from 'emotion-theming'
 import { linearGradient } from 'polished'
 import Character from '@/components/Character'
-import { Theme } from '../../../config/theme'
+import { Theme } from '@theme'
 
 export const GET_CHARACTERS_COUNT = gql`
   query GetCharactersCount {
@@ -50,7 +50,7 @@ const SelectCharacter = () => {
         css={{
           padding: 8,
           ...linearGradient({
-            colorStops: [`${colors.purple90} 0%`, `${colors.purple80} 51%`, `${colors.purple90} 100%`],
+            colorStops: [`${colors.purple90} 10%`, `${colors.purple60} 51%`, `${colors.purple90} 90%`],
             toDirection: 'to right',
             fallback: colors.purple90,
           }),

@@ -1,20 +1,23 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { useTheme } from 'emotion-theming'
+import { transitions } from 'polished'
 import { ReactComponent as GithubIcon } from '@/icons/github.svg'
-import { Theme } from '../../../config/theme'
+import media from '@/utils/media'
+import { typography } from '@/utils/typography'
+import { Theme } from '@theme'
 
 interface LayoutProps {
   children: React.ReactNode
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const { colors, shadows, time } = useTheme<Theme>()
+  const { colors, shadows, timings } = useTheme<Theme>()
 
   const linkCSS = {
     fontSize: 24,
     fontWeight: 200,
-    transition: `font-weight ease ${time}ms`,
+    ...transitions('font-weight', timings.basic),
     ':hover': {
       fontWeight: 800,
     },
@@ -23,24 +26,34 @@ const Layout = ({ children }: LayoutProps) => {
   const activeStyle = {
     fontWeight: 800,
   }
+  console.log(typography('title'))
 
   return (
     <div css={{ display: 'grid', gridTemplateRows: 'auto 1fr auto', minHeight: '100vh' }}>
       <header
         css={{
-          display: 'flex',
+          display: 'grid',
+          gridTemplateColumns: '100px 1fr auto',
+          gridColumnGap: 32,
+          gridRowGap: 8,
           alignItems: 'center',
           padding: 16,
           backgroundColor: colors.purple90,
           boxShadow: shadows.basic,
           zIndex: 1,
+          [media.md]: { gridTemplateColumns: '100px 1fr' },
         }}
       >
-        <div css={{ width: 100, height: 100, borderRadius: '50%', marginRight: 32, backgroundColor: colors.purple5 }} />
-        <h1 css={{ flexGrow: 1, fontSize: 40, fontWeight: 700, marginRight: 32, marginBottom: 0 }}>
-          Gatsby Starter Vadyan
-        </h1>
-        <nav>
+        <div
+          css={{
+            width: 100,
+            height: 100,
+            borderRadius: '50%',
+            backgroundColor: colors.purple5,
+          }}
+        />
+        <p css={typography('title')}>Gatsby Starter Vadyan</p>
+        <nav css={{ [media.md]: { gridColumn: 2 } }}>
           <Link to="/" css={{ ...linkCSS, marginRight: 16 }} activeStyle={activeStyle}>
             Quick start
           </Link>
