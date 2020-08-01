@@ -4,9 +4,9 @@
   "license": "MIT",
   "author": "p1t1ch <belobeev.kirill@gmail.com>",
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -H 0.0.0.0",
     "build": "gatsby build",
-    "start": "gatsby serve --port 8000",
+    "start": "gatsby serve -H 0.0.0.0 -p 8000",
     "storybook": "NODE_ENV=production start-storybook -s public",
     "storybook:build": "NODE_ENV=production build-storybook -o docs -s public",
     "storybook:start": "serve docs",

@@ -2,19 +2,19 @@ import React from 'react'
 import { useQuery, gql } from '@apollo/client'
 import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
+import media from '@/utils/media'
 import { Theme, ThemeProps } from '@theme'
 
 const Article = styled.article(({ theme }: ThemeProps) => ({
   display: 'flex',
   alignItems: 'center',
   padding: theme.grid * 2,
-  backgroundColor: theme.colors.purple5,
-  color: theme.colors.purple90,
+  backgroundColor: theme.colors.purpleLight,
+  color: theme.colors.purpleDark,
   boxShadow: theme.shadows.basic,
 }))
 
 const Image = styled.img(({ theme }: ThemeProps) => ({
-  gridRow: 'span 2',
   borderRadius: '50%',
   marginRight: theme.grid * 2,
 }))
@@ -23,7 +23,12 @@ const List = styled.dl(({ theme }: ThemeProps) => ({
   display: 'grid',
   gridTemplateColumns: `auto minmax(${theme.grid * 28}px, 1fr)`,
   justifyItems: 'start',
-  dd: { paddingLeft: theme.grid },
+  dt: { fontWeight: 700 },
+  dd: {
+    paddingLeft: theme.grid,
+    [media.sm]: { padding: 0 },
+  },
+  [media.sm]: { gridTemplateColumns: '1fr' },
 }))
 
 export const GET_CHARACTER_DATA = gql`
@@ -65,9 +70,9 @@ const Character = ({ id }: CharacterProps) => {
   const fallbackText = 'loading...'
   const fallbackData: CharacterData = {
     character: {
-      image: `https://dummyimage.com/${imageSize}x${imageSize}/${theme.colors.purple90.slice(
+      image: `https://dummyimage.com/${imageSize}x${imageSize}/${theme.colors.purpleDark.slice(
         1
-      )}/${theme.colors.purple5.slice(1)}.png&text=${fallbackText}`,
+      )}/${theme.colors.purpleLight.slice(1)}.png&text=${fallbackText}`,
       name: fallbackText,
       species: fallbackText,
       origin: {

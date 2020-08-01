@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Gatsby starter',
-  shortTitle: 'Gatsby starter',
+  title: 'Gatsby Starter Vadyan',
+  shortTitle: 'Gatsby Starter Vadyan',
   description: 'Gatsby starter for personal projects',
   keywords: ['gatsby', 'starter'],
   /* Absolute deployment path without trailing slash */

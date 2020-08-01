@@ -1,19 +1,7 @@
 const colors = {
-  white: '#fff',
-  black: '#000',
-  dark: '#333',
-  brand: '#639',
-  brandHover: '#452475',
-  purple5: '#fcfaff',
-  purple10: '#f6edfa',
-  purple20: '#f1defa',
-  purple30: '#d9bae8',
-  purple40: '#b17acc',
-  purple50: '#8a4baf',
-  purple60: '#663399',
-  purple70: '#542c85',
-  purple80: '#452475',
-  purple90: '#362066',
+  purple: '#639',
+  purpleLight: '#fcfaff',
+  purpleDark: '#362066',
 }
 
 const grid = 8
@@ -22,13 +10,11 @@ const grid = 8
 
 const breakpoints = {
   lg: 1440,
-  md: 968,
   sm: 768,
 }
 
 const typography = {
   breakpoints: ['lg', 'sm'],
-  base: 18,
   family: 'Manrope',
   stack: [
     'system-ui',
@@ -51,7 +37,7 @@ const typography = {
     },
     h2: {
       desktop: { fontWeight: 700, lineHeight: 1.5, fontSize: 28 },
-      mobile: { fontSize: 22 },
+      mobile: { fontSize: 18 },
     },
     title: {
       desktop: { fontWeight: 700, lineHeight: 1.5, fontSize: 40 },
@@ -59,13 +45,13 @@ const typography = {
     },
     nav: {
       desktop: { fontWeight: 200, lineHeight: 1.5, fontSize: 24 },
-      mobile: { fontSize: 20 },
+      mobile: { fontSize: 18 },
     },
   },
 }
 
 const shadows = {
-  basic: `0 0 8px 0 ${colors.purple90}`,
+  basic: `0 0 8px 0 ${colors.purpleDark}`,
 }
 
 const transitions = {

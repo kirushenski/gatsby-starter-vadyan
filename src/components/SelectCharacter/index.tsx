@@ -3,6 +3,7 @@ import { useQuery, gql } from '@apollo/client'
 import styled from '@emotion/styled'
 import { linearGradient, transitions } from 'polished'
 import Character from '@/components/Character'
+import media from '@/utils/media'
 import { ThemeProps } from '@theme'
 
 const Wrapper = styled.div(({ theme }: ThemeProps) => ({
@@ -11,16 +12,17 @@ const Wrapper = styled.div(({ theme }: ThemeProps) => ({
   gridGap: theme.grid * 3,
   justifyContent: 'center',
   alignItems: 'center',
+  [media.sm]: { gridTemplateColumns: '1fr', justifySelf: 'stretch' },
 }))
 
 const Button = styled.button(({ theme }: ThemeProps) => ({
   padding: theme.grid,
   ...linearGradient({
-    colorStops: [`${theme.colors.purple90} 10%`, `${theme.colors.purple60} 51%`, `${theme.colors.purple90} 90%`],
+    colorStops: [`${theme.colors.purpleDark} 10%`, `${theme.colors.purple} 51%`, `${theme.colors.purpleDark} 90%`],
     toDirection: 'to right',
-    fallback: theme.colors.purple90,
+    fallback: theme.colors.purpleDark,
   }),
-  color: theme.colors.purple5,
+  color: theme.colors.purpleLight,
   borderRadius: 4,
   boxShadow: theme.shadows.basic,
   backgroundSize: '200% auto',
