@@ -67,16 +67,13 @@
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.19",
     "gatsby-plugin-svgr": "^2.0.2",
-    "gatsby-plugin-typography": "^2.5.10",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.10",
     "gatsby-source-filesystem": "^2.3.19",
     "gatsby-transformer-sharp": "^2.5.11",
     "polished": "^3.6.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^6.1.0",
-    "react-typography": "^0.16.19",
-    "typography": "^0.16.19"
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.10.4",
@@ -91,7 +88,6 @@
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.0.0",
     "@types/testing-library__jest-dom": "^5.9.1",
-    "@types/typography": "^0.16.3",
     "@typescript-eslint/eslint-plugin": "^3.6.0",
     "@typescript-eslint/parser": "^3.6.0",
     "babel-jest": "^26.1.0",

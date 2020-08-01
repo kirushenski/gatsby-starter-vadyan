@@ -1,11 +1,19 @@
 import React from 'react'
-import { useTheme } from 'emotion-theming'
+import styled from '@emotion/styled'
 import { graphql, PageProps } from 'gatsby'
 import Img, { FixedObject } from 'gatsby-image'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
 import SelectCharacter from '@/components/SelectCharacter'
-import { Theme } from '@theme'
+import { ThemeProps } from '@theme'
+
+const ImageWrapper = styled.div(({ theme }: ThemeProps) => ({
+  padding: `${theme.grid}px ${theme.grid * 3}px`,
+  border: `4px solid ${theme.colors.purple90}`,
+  borderRadius: 8,
+  boxShadow: theme.shadows.basic,
+  backgroundColor: theme.colors.purple5,
+}))
 
 interface ShowcasePageData {
   file: {
@@ -16,24 +24,14 @@ interface ShowcasePageData {
 }
 
 const ShowcasePage = ({ data }: PageProps<ShowcasePageData>) => {
-  const { colors, shadows } = useTheme<Theme>()
-
   return (
     <Layout>
       <Seo />
       <h1>Showcase</h1>
       <h2>Static data with Gatsby Image</h2>
-      <div
-        css={{
-          padding: '8px 24px',
-          border: `4px solid ${colors.purple90}`,
-          borderRadius: 8,
-          boxShadow: shadows.basic,
-          backgroundColor: colors.purple5,
-        }}
-      >
+      <ImageWrapper>
         <Img fixed={data.file.childImageSharp.fixed} alt="Gatsby image showcase" />
-      </div>
+      </ImageWrapper>
       <h2>Dynamic data with Apollo Client</h2>
       <SelectCharacter />
     </Layout>

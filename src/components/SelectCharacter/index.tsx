@@ -1,9 +1,34 @@
 import React, { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
-import { useTheme } from 'emotion-theming'
-import { linearGradient } from 'polished'
+import styled from '@emotion/styled'
+import { linearGradient, transitions } from 'polished'
 import Character from '@/components/Character'
-import { Theme } from '@theme'
+import { ThemeProps } from '@theme'
+
+const Wrapper = styled.div(({ theme }: ThemeProps) => ({
+  display: 'grid',
+  gridTemplateColumns: `1fr ${theme.grid * 20}px`,
+  gridGap: theme.grid * 3,
+  justifyContent: 'center',
+  alignItems: 'center',
+}))
+
+const Button = styled.button(({ theme }: ThemeProps) => ({
+  padding: theme.grid,
+  ...linearGradient({
+    colorStops: [`${theme.colors.purple90} 10%`, `${theme.colors.purple60} 51%`, `${theme.colors.purple90} 90%`],
+    toDirection: 'to right',
+    fallback: theme.colors.purple90,
+  }),
+  color: theme.colors.purple5,
+  borderRadius: 4,
+  boxShadow: theme.shadows.basic,
+  backgroundSize: '200% auto',
+  ...transitions('background-position', theme.transitions.basic),
+  ':hover': {
+    backgroundPosition: 'right center',
+  },
+}))
 
 export const GET_CHARACTERS_COUNT = gql`
   query GetCharactersCount {
@@ -24,49 +49,23 @@ export interface CharactersCount {
 }
 
 const SelectCharacter = () => {
-  const { colors, shadows } = useTheme<Theme>()
-
   const { data } = useQuery<CharactersCount>(GET_CHARACTERS_COUNT)
   const charactersCount = data?.characters.info.count || 1
 
   const [characterId, setCharacterId] = useState('1')
 
   return (
-    <div
-      css={{
-        display: 'grid',
-        gridTemplateColumns: '1fr 150px',
-        gridGap: 24,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
+    <Wrapper>
       <Character id={characterId} />
-      <button
+      <Button
         onClick={() => {
           const randomId = String(Math.floor(Math.random() * (charactersCount + 1)))
           setCharacterId(randomId)
         }}
-        css={{
-          padding: 8,
-          ...linearGradient({
-            colorStops: [`${colors.purple90} 10%`, `${colors.purple60} 51%`, `${colors.purple90} 90%`],
-            toDirection: 'to right',
-            fallback: colors.purple90,
-          }),
-          color: colors.purple5,
-          borderRadius: 4,
-          boxShadow: shadows.basic,
-          backgroundSize: '200% auto',
-          transition: 'all ease 300ms',
-          ':hover': {
-            backgroundPosition: 'right center',
-          },
-        }}
       >
         Randomize
-      </button>
-    </div>
+      </Button>
+    </Wrapper>
   )
 }
 

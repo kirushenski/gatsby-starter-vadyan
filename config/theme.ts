@@ -16,6 +16,8 @@ const colors = {
   purple90: '#362066',
 }
 
+const grid = 8
+
 // TODO Write interface for theme
 
 const breakpoints = {
@@ -27,18 +29,7 @@ const breakpoints = {
 const typography = {
   breakpoints: ['lg', 'sm'],
   base: 18,
-  styles: {
-    title: {
-      desktop: {
-        fontWeight: 700,
-        fontSize: 40,
-        lineHeight: 1.2,
-      },
-      mobile: {
-        fontSize: 24,
-      },
-    },
-  },
+  family: 'Manrope',
   stack: [
     'system-ui',
     '-apple-system',
@@ -49,22 +40,45 @@ const typography = {
     'Arial',
     'sans-serif',
   ],
+  styles: {
+    body: {
+      desktop: { fontWeight: 400, lineHeight: 1.5, fontSize: 18 },
+      mobile: { fontSize: 16 },
+    },
+    h1: {
+      desktop: { fontWeight: 700, lineHeight: 1.5, fontSize: 36 },
+      mobile: { fontSize: 24 },
+    },
+    h2: {
+      desktop: { fontWeight: 700, lineHeight: 1.5, fontSize: 28 },
+      mobile: { fontSize: 22 },
+    },
+    title: {
+      desktop: { fontWeight: 700, lineHeight: 1.5, fontSize: 40 },
+      mobile: { fontSize: 24 },
+    },
+    nav: {
+      desktop: { fontWeight: 200, lineHeight: 1.5, fontSize: 24 },
+      mobile: { fontSize: 20 },
+    },
+  },
 }
 
 const shadows = {
   basic: `0 0 8px 0 ${colors.purple90}`,
 }
 
-const timings = {
+const transitions = {
   basic: `300ms ease`,
 }
 
 const theme = {
   colors,
+  grid,
   breakpoints,
   typography,
   shadows,
-  timings,
+  transitions,
 }
 
 export type Theme = typeof theme

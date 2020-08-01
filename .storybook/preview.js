@@ -3,7 +3,6 @@ import { addParameters, addDecorator } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import RootWrapper from '@/components/RootWrapper'
-import typography from '@/utils/typography'
 import theme from '@theme'
 
 addParameters({
@@ -16,8 +15,6 @@ addParameters({
 })
 
 addDecorator(storyFn => <RootWrapper>{storyFn()}</RootWrapper>)
-
-typography.injectStyles()
 
 // Override some globals so Gatsby Link doesn't crash Storybook
 global.___loader = {
