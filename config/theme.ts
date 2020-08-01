@@ -6,15 +6,13 @@ const colors = {
 
 const grid = 8
 
-// TODO Write interface for theme
-
 const breakpoints = {
   lg: 1440,
   sm: 768,
 }
 
 const typography = {
-  breakpoints: ['lg', 'sm'],
+  breakpoints: ['lg', 'sm'] as (keyof typeof breakpoints)[],
   family: 'Manrope',
   stack: [
     'system-ui',

@@ -2,14 +2,12 @@ import { rem } from 'polished'
 import theme, { Theme } from '@theme'
 import media from '@/utils/media'
 
-// TODO Убрать as после обозначения интерфейса темы
-
 export const typography = (name: keyof Theme['typography']['styles']) => {
   const typographyStyle = theme.typography.styles[name]
   const maxFs = rem(typographyStyle.desktop.fontSize)
   const minFs = typographyStyle.mobile && rem(typographyStyle.mobile.fontSize)
 
-  const [maxVw, minVw] = (theme.typography.breakpoints as any).map(
+  const [maxVw, minVw] = theme.typography.breakpoints.map(
     (bpName: keyof Theme['breakpoints']) => theme.breakpoints[bpName]
   )
 
