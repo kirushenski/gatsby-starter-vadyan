@@ -2,14 +2,6 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-interface SeoProps {
-  title?: string
-  description?: string
-  keywords?: string[]
-  image?: string
-  pathname?: string
-}
-
 interface SeoQuery {
   site: {
     siteMetadata: {
@@ -22,6 +14,19 @@ interface SeoQuery {
       twitterUsername: string
     }
   }
+}
+
+interface SeoProps {
+  /** Title tag */
+  title?: string
+  /** Meta description */
+  description?: string
+  /** Meta keywords */
+  keywords?: string[]
+  /** Image for socials. Makes reason for articles */
+  image?: string
+  /** Relative path for canonical link and socials */
+  pathname?: string
 }
 
 const Seo = ({ title, description, keywords, image, pathname }: SeoProps) => {

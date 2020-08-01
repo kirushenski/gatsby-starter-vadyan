@@ -1,4 +1,5 @@
 import React from 'react'
+import 'focus-visible'
 import { Global } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 import { buttons, transitions, normalize } from 'polished'

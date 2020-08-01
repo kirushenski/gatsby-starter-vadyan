@@ -60,6 +60,7 @@ interface CharacterVars {
 }
 
 interface CharacterProps {
+  /** Character id */
   id: string
 }
 

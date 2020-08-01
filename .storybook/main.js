@@ -4,6 +4,9 @@ module.exports = {
   stories: ['./welcome.stories.mdx', '../src/components/**/*.stories.mdx'],
   addons: ['@storybook/addon-essentials', '@storybook/addon-a11y'],
   webpackFinal: async config => {
+    // set the NODE_ENV to 'production' by default, to allow babel-plugin-remove-graphql-queries to remove static queries
+    process.env.NODE_ENV = 'production'
+
     const babelRule = config.module.rules.find(rule => rule.test.toString() === /\.(mjs|tsx?|jsx?)$/.toString())
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code
     babelRule.exclude = [/node_modules\/(?!(gatsby)\/)/]

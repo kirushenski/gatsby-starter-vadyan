@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import styled from '@emotion/styled'
-import { linearGradient, transitions } from 'polished'
+import { linearGradient, transitions, padding } from 'polished'
 import Character from '@/components/Character'
 import media from '@/utils/media'
 import { ThemeProps } from '@theme'
@@ -16,7 +16,7 @@ const Wrapper = styled.div(({ theme }: ThemeProps) => ({
 }))
 
 const Button = styled.button(({ theme }: ThemeProps) => ({
-  padding: theme.grid,
+  ...padding(theme.grid * 2, theme.grid),
   ...linearGradient({
     colorStops: [`${theme.colors.purpleDark} 10%`, `${theme.colors.purple} 51%`, `${theme.colors.purpleDark} 90%`],
     toDirection: 'to right',

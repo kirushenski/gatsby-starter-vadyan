@@ -59,6 +59,7 @@ const Footer = styled.footer(({ theme }: ThemeProps) => ({
 }))
 
 interface LayoutProps {
+  /** Page content */
   children: React.ReactNode
 }
 
