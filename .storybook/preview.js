@@ -3,6 +3,7 @@ import { addParameters, addDecorator } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import RootWrapper from '@/components/RootWrapper'
+import '../test/loadershim'
 import theme from '@theme'
 
 addParameters({
@@ -16,13 +17,6 @@ addParameters({
 
 addDecorator(storyFn => <RootWrapper>{storyFn()}</RootWrapper>)
 
-// Override some globals so Gatsby Link doesn't crash Storybook
-global.___loader = {
-  enqueue: () => {},
-  hovering: () => {},
-}
-global.__PATH_PREFIX__ = ''
-global.__BASE_PATH__ = ''
 // Log action instead of actual navigation for Link
 window.___navigate = pathname => {
   action('Link')(pathname)

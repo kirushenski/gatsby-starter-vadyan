@@ -1,32 +1,26 @@
-const path = require('path')
-
 module.exports = {
-  transform: {
-    '^.+\\.[tj]sx?$': path.join(__dirname, 'test/jest-preprocess.js'),
-  },
-  testPathIgnorePatterns: ['node_modules', '\\.cache', '<rootDir>.*/public'],
-  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
+  // Transform files with our own Babel config
+  transform: { '^.+\\.[tj]sx?$': '<rootDir>/test/jest-preprocess.js' },
+  // Add manual mocks and aliases support
   moduleNameMapper: {
     '.+\\.(jpg|jpeg|png|webp|woff|woff2|mp4|webm|mp3)$': '<rootDir>/__mocks__/file.js',
     '.+\\.svg$': '<rootDir>/__mocks__/svgr.js',
     '@test-utils': '<rootDir>/test/test-utils.tsx',
+    '@theme': '<rootDir>/config/theme.ts',
     '@/(.*)': '<rootDir>/src/$1',
   },
-  globals: {
-    __PATH_PREFIX__: '',
-  },
-  setupFiles: [path.join(__dirname, 'test/loadershim.js')],
+  // Ignore Gatsby tests directory in cache
+  testPathIgnorePatterns: ['node_modules', '.cache'],
+  // Transform Gatsby because it includes un-transpiled ES6 code
+  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
+  // Add some globals overrides for Gatsby
+  setupFiles: ['<rootDir>/test/loadershim.js'],
+  // Add custom matchers
+  setupFilesAfterEnv: ['<rootDir>/test/setup-test-env.js'],
+  // Extend Jest watch mode possibilities
   watchPlugins: ['jest-watch-select-projects', 'jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
-  testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  // Improve snapshots for CSS in JS
   snapshotSerializers: ['jest-emotion'],
-  collectCoverageFrom: ['src/**/*.{tsx,ts,js}'],
-  coverageThreshold: {
-    global: {
-      statements: 0,
-      branches: 0,
-      functions: 0,
-      lines: 0,
-    },
-  },
+  // We use Jest to test components and utils
+  collectCoverageFrom: ['<rootDir>/src/components/**/*.{tsx,ts,js}', '<rootDir>/src/utils/*.{tsx,ts,js}'],
 }

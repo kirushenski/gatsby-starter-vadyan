@@ -33,6 +33,7 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 0,
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/no-var-requires': 0,
+    '@typescript-eslint/no-unused-vars': [1, { ignoreRestSiblings: true }],
     '@typescript-eslint/no-use-before-define': 0,
     'jsx-a11y/no-onchange': 0,
     'import/no-named-as-default': 0,
