@@ -18,7 +18,7 @@ module.exports = {
   // Add custom matchers
   setupFilesAfterEnv: ['<rootDir>/test/setup-test-env.js'],
   // Extend Jest watch mode possibilities
-  watchPlugins: ['jest-watch-select-projects', 'jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
   // Improve snapshots for CSS in JS
   snapshotSerializers: ['jest-emotion'],
   // We use Jest to test components and utils

@@ -4,23 +4,32 @@ import { render } from '@test-utils'
 import * as Gatsby from 'gatsby'
 import Seo from '@/components/Seo'
 
+const siteMetadata = {
+  title: 'Title',
+  description: 'Description',
+  keywords: ['some', 'keywords'],
+  baseUrl: '',
+  lang: 'en',
+  facebookUsername: '',
+  twitterUsername: '',
+}
+
 const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery')
 useStaticQuery.mockImplementation(() => ({
   site: {
-    siteMetadata: {
-      title: 'Gatsby starter',
-      description: 'Gatsby starter for personal projects',
-      keywords: ['gatsby', 'starter'],
-      baseUrl: '',
-      lang: 'en',
-      facebookUsername: '',
-      twitterUsername: '',
-    },
+    siteMetadata,
   },
 }))
 
-test('react-helmet added title from siteMetadata', () => {
+test('adds title from siteMetadata by default', () => {
   render(<Seo />)
   const helmet = Helmet.peek()
-  expect(helmet.title).toBe('Gatsby starter')
+  expect(helmet.title).toBe(siteMetadata.title)
+})
+
+test('replace default title with provided by props', () => {
+  const titleText = 'Custom title'
+  render(<Seo title={titleText} />)
+  const helmet = Helmet.peek()
+  expect(helmet.title).toBe(titleText)
 })

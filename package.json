@@ -111,7 +111,6 @@
     "is-ci-cli": "^2.1.2",
     "jest": "^26.2.2",
     "jest-emotion": "^10.0.32",
-    "jest-watch-select-projects": "^2.0.0",
     "jest-watch-typeahead": "^0.6.0",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
