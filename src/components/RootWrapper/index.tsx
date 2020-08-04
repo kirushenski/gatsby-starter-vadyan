@@ -9,7 +9,7 @@ import theme from '@theme'
 interface RootWrapperProps {
   /** Site content */
   children: React.ReactNode
-  /** Mocked response to Apollo. Swaps ApollProvider with MockedProvider if added */
+  /** Mocked response to Apollo. Providing mocks swaps ApolloProvider with MockedProvider */
   apolloMocks?: MockedResponse[]
 }
 
@@ -17,7 +17,7 @@ const RootWrapper = ({ children, apolloMocks }: RootWrapperProps) => {
   const ApolloWrapper = apolloMocks ? MockedProvider : ApolloProvider
 
   return (
-    <ApolloWrapper client={client} mocks={apolloMocks} addTypename={false}>
+    <ApolloWrapper client={client} mocks={apolloMocks} addTypename={!apolloMocks}>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
         {children}
