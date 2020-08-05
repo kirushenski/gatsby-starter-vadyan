@@ -1,10 +1,11 @@
 const path = require('path')
 
 module.exports = {
-  stories: ['./welcome.stories.mdx', '../src/components/**/*.stories.mdx'],
+  // All stories are written in mdx. Intro story is the first in the list
+  stories: ['intro.stories.mdx', '../src/components/**/*.stories.mdx'],
   addons: ['@storybook/addon-essentials', '@storybook/addon-a11y'],
   webpackFinal: async config => {
-    // set the NODE_ENV to 'production' by default, to allow babel-plugin-remove-graphql-queries to remove static queries
+    // Set NODE_ENV to 'production' by default, to allow babel-plugin-remove-graphql-queries to do his job
     process.env.NODE_ENV = 'production'
 
     const babelRule = config.module.rules.find(rule => rule.test.toString() === /\.(mjs|tsx?|jsx?)$/.toString())
@@ -35,7 +36,7 @@ module.exports = {
       '@': path.join(__dirname, '../src'),
     }
 
-    // Disable performance budgets for Storybook
+    // Disable performance budgets which don't make sense for Storybook
     config.performance = false
 
     return config

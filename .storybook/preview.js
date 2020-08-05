@@ -1,21 +1,24 @@
 import React from 'react'
-import { addParameters, addDecorator } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import RootWrapper from '@/components/RootWrapper'
 import '../test/loadershim'
 import theme from '@theme'
 
-addParameters({
+export const parameters = {
+  // Automatically create action args for all props that start with "on"
   actions: { argTypesRegex: '^on.*' },
-  grid: { cellSize: theme.step },
+  // Use list of viewports provided by addon
   viewport: { viewports: INITIAL_VIEWPORTS },
+  // Use backgrounds from colors field of project theme
   backgrounds: {
     values: Object.entries(theme.colors).map(([name, value]) => ({ name, value })),
   },
-})
+}
 
-addDecorator(storyFn => <RootWrapper>{storyFn()}</RootWrapper>)
+// Wrap all stories in same wrapper as main app and tests
+const RootWrapperDecorator = storyFn => <RootWrapper>{storyFn()}</RootWrapper>
+export const decorators = [RootWrapperDecorator]
 
 // Log action instead of actual navigation for Link
 window.___navigate = pathname => {
