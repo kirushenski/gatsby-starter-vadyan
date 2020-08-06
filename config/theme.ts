@@ -4,7 +4,7 @@ const colors = {
   purpleDark: '#362066',
 }
 
-const grid = 10
+const grid = 8
 
 const breakpoints = {
   lg: 1440,
