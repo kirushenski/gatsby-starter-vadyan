@@ -1,3 +1,6 @@
+// All defined here properties are passed to Emotion ThemeProvider
+// In project they are available via useTheme hook or prop in styled components
+
 const colors = {
   purple: '#639',
   purpleLight: '#fcfaff',
@@ -65,8 +68,10 @@ const theme = {
   transitions,
 }
 
+// Use this type with useTheme hook
 export type Theme = typeof theme
 
+// Use this interface with styled components props
 export interface ThemeProps {
   theme: Theme
 }

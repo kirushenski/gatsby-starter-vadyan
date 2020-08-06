@@ -1,4 +1,5 @@
 // We use assets as modules with Webpack, so we need to tell Typescript what these imports mean
+
 type SvgrComponent = React.FC<
   React.SVGProps<SVGSVGElement> & {
     /** SVG accessible name provided by `title` tag */
