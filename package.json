@@ -120,5 +120,8 @@
   },
   "resolutions": {
     "babel-plugin-remove-graphql-queries": "2.9.14"
+  },
+  "engines": {
+    "node": ">= 10.14.2"
   }
 }
