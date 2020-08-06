@@ -24,8 +24,7 @@
     "lint": "eslint . --ext .tsx,.ts,.mdx,.js --fix",
     "type-check": "tsc --noEmit",
     "validate": "yarn lint && yarn type-check && yarn test:coverage && yarn test:e2e:run",
-    "clean": "gatsby clean",
-    "chromatic": "chromatic"
+    "clean": "gatsby clean"
   },
   "husky": {
     "hooks": {
