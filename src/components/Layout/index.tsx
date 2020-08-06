@@ -70,9 +70,9 @@ const Layout = ({ children }: LayoutProps) => {
     <div css={{ display: 'grid', gridTemplateRows: 'auto 1fr auto', minHeight: '100vh' }}>
       <Header>
         <Avatar />
-        {/* <Link to="/" css={typography('title')}> */}
-        Gatsby Starter Vadyan
-        {/* </Link> */}
+        <Link to="/" css={typography('title')}>
+          Gatsby Starter Vadyan
+        </Link>
         <Nav>
           <StyledLink to="/" activeClassName="active">
             Quick start
