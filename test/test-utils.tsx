@@ -1,3 +1,4 @@
+// Use this file as @testing-library/react import replacement with build-in wrapper in render
 import React from 'react'
 import { render, RenderOptions } from '@testing-library/react'
 import { MockedResponse } from '@apollo/client/testing'

@@ -39,10 +39,9 @@ module.exports = {
     'import/no-named-as-default': 0,
     'react/prop-types': 0,
     'react/display-name': 0,
-    'react-hooks/rules-of-hooks': 2,
-    'react-hooks/exhaustive-deps': 1,
   },
   settings: {
+    // Add aliases support with eslint-import-resolver-alias
     'import/resolver': {
       alias: {
         map: [
@@ -53,24 +52,16 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js'],
       },
     },
+    // Needs to set for eslint-plugin-react
     react: {
       version: 'detect',
     },
   },
   overrides: [
     {
+      // Add support for mdx files with eslint-plugin-mdx. Simply adding it in "extends" doesn't work
       files: ['*.mdx'],
       extends: ['plugin:mdx/overrides'],
-    },
-    {
-      files: ['**/__tests__/**/*.js'],
-      settings: {
-        'import/resolver': {
-          jest: {
-            jestConfigFile: './jest.config.js',
-          },
-        },
-      },
     },
   ],
 }

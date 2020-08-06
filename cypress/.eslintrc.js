@@ -1,3 +1,4 @@
+// This config extends base config and solves conflicts between Jest and Mocha/Chai which are used by Cypress
 module.exports = {
   extends: ['plugin:cypress/recommended'],
   rules: {

@@ -2,6 +2,9 @@ import { rem } from 'polished'
 import theme, { Theme } from '@theme'
 import media from '@/utils/media'
 
+/**
+ * Converts theme typography settings to CSS rules with providing fluid typography and converting font sizes to rems
+ */
 export const typography = (name: keyof Theme['typography']['styles']) => {
   const typographyStyle = theme.typography.styles[name]
   const maxFs = rem(typographyStyle.desktop.fontSize)
