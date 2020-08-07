@@ -51,8 +51,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v1
       - name: Install dependencies
         run: yarn
       - name: Install Lighthouse CI
@@ -60,4 +58,4 @@ jobs:
       - name: Build Gatsby project
         run: yarn build
       - name: Run Lighthouse
-        run: lhci autorun --upload.target=temporary-public-storage
+        run: lhci autorun --upload.target=temporary-public-storage --collect.url=http://localhost/
