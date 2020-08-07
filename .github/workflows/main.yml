@@ -44,3 +44,18 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           buildScriptName: storybook:build
           exitOnceUploaded: true
+
+  lighthouse:
+    name: Run Lighthouse checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          yarn
+          yarn global add @lhci/cli@0.4.x
+      - name: Build Gatsby project
+        run: yarn build
+      - name: Run Lighthouse
+        run: lhci autorun --upload.target=temporary-public-storage
