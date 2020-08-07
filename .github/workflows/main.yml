@@ -54,9 +54,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
       - name: Install dependencies
-        run: |
-          yarn
-          yarn global add @lhci/cli@0.4.x
+        run: yarn
+      - name: Install Lighthouse CI
+        run: npm i -g @lhci/cli@0.4.x
       - name: Build Gatsby project
         run: yarn build
       - name: Run Lighthouse
