@@ -2,7 +2,7 @@ module.exports = {
   // Project title. Used as SEO title and PWA name
   title: 'Gatsby Starter Vadyan',
   // Project short name. Used by PWA
-  shortTitle: 'Gatsby Starter Vadyan',
+  shortTitle: 'GS Vadyan',
   // Project description. Used in SEO meta tag and by PWA
   description: 'A modern content-agnostic Gatsby starter',
   // Keywords describing the project. Used in SEO meta tag
@@ -18,7 +18,7 @@ module.exports = {
   // Path to main favicon. Recommended size: 512x512. Other sizes are generated automatically
   favicon: 'src/images/favicon.png',
   // Theme color. Used as color of device toolbar in supported browsers
-  themeColor: '#639',
+  themeColor: '#362066',
   // Background color. Used as background on PWA launch screen. Recommended to make it the same as body color
-  backgroundColor: '#639',
+  backgroundColor: '#362066',
 }

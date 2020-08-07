@@ -52,7 +52,7 @@ const typography = {
 }
 
 const shadows = {
-  basic: `0 0 8px 0 ${colors.purpleDark}`,
+  basic: `0 0 4px 1px ${colors.purpleDark}`,
 }
 
 const transitions = {

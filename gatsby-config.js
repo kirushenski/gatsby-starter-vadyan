@@ -61,6 +61,7 @@ module.exports = {
         description: config.description,
         lang: config.lang,
         icon: config.favicon,
+        icon_options: { purpose: 'maskable' },
         theme_color: config.themeColor,
         background_color: config.backgroundColor,
       },
