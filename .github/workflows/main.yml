@@ -60,4 +60,4 @@ jobs:
       - name: Build Gatsby project
         run: yarn build
       - name: Run Lighthouse
-        run: lhci autorun --upload.target=temporary-public-storage --collect.url=http://localhost/index.html
+        run: lhci autorun
