@@ -137,7 +137,8 @@ This project uses `npm scripts` to communicate with the app. Here's the full lis
 | `test:e2e:open` \*   | Run Cypress in browser mode with server start                                                     |
 | `coverage`           | Оpen coverage reports. You need to generate them with `test:coverage` first                       |
 | `stats`              | Open Webpack Bundle Analyzer reports. You need to generate them with `build` first                |
-| `lint`               | Run ESLint and Prettier on `.tsx`, `.ts`, `.mdx` and `.js` files                                  |
+| `lint`               | Run ESLint in fix mode on `.tsx`, `.ts`, `.mdx` and `.js` files except of ignored folders         |
+| `format`             | Run Prettier in write mode on all files except of ignored folders                                 |
 | `type-check`         | Run Typescript compiler for types checking                                                        |
 | `validate`           | Full code quality control: `lint`, `type-check`, `test:coverage` and `test:e2e` in one command    |
 | `clean`              | Clean `public` and `.cache` folders for the moments when you cannot rely on cache                 |
@@ -189,7 +190,11 @@ lint-staged runs `eslint`, `prettier` and `tsc` commands on changed files via Hu
 
 🚨 Similar to Typescript, for ESLint in `cypress` folder additional config is defined to solve conflicts in rules between global Jest and Chai/Mocha commands
 
-🚨 `eslintIgnore` field in `package.json` was added to include `.storybook` folder in list of linted directories because all dot folders are excluded by default. Otherwise i would just use `--ignore-path .gitignore` and be fine
+🚨 `eslintIgnore` field in `package.json` was added to include `.storybook` folder in list of linted directories because all dot folders are excluded by default. Otherwise i would just use `--ignore-path .gitignore` and be fine. Prettier on other hand respects `.storybook` folder
+
+🚨 ESLint and Prettier are configured in a way when styling rules are excluded from ESLint. So firstly, you don't have conflicts between these tools, and secondly if you have ESLint and Prettier setup in code editor, you'll not be bothered with wiggly red lines for styling rules
+
+🚨 `type-check` command on pre-commit runs on all files because tsc and lint-staged don't work together
 
 ### 🎲 Testing environment
 
@@ -241,7 +246,7 @@ Starter also generates `manifest.webmanifest` in `public` folder, includes all r
 
 ### 🚦 CI/CD
 
-CI/CD includes validation checks (linting, type checking, unit and E2E testing), auto deploys of Storybook to Chromatic and Lighthouse checks. All these goes on pushes / pull requests in master branch. You can find Github Actions workflow in `.github/main.yml`.
+CI/CD includes validation checks (linting, formatting, type checking, unit and E2E testing), auto deploys of Storybook to Chromatic and Lighthouse checks. All these goes on pushes / pull requests in master branch. You can find Github Actions workflow in `.github/main.yml`.
 
 Of course all of these is a personal thing, and you can create your own CI/CD process from scratch. Starter's purpose is just providing sensible defaults and at least give ready to use setup to future myself.
 
@@ -249,7 +254,7 @@ Of course all of these is a personal thing, and you can create your own CI/CD pr
 
 🚨 Github Actions workflow requires you to have 2 secrets in your repository: `CHROMATIC_PROJECT_TOKEN` which you get when signed in with [Chromatic](https://www.chromatic.com/start) and `LHCI_GITHUB_APP_TOKEN` which you can get with [installing Lighthouse Github app](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md#github-app-method-recommended)
 
-🚨 Lighthouse by default will run on **ALL** html files in `public` folder. In first, this takes a lot of time, and in second this includes `offline-plugin-app-shell-fallback` which is not a real page and will break your check. This is why i defined an array of URLs in `lighthouserc.js` to run Lighthouse with. Reconfigure them with your own pages (`index` at least)
+🚨 Lighthouse by default will run on **ALL** html files in `public` folder. Firstly, this takes a lot of time, and secondly this includes `offline-plugin-app-shell-fallback` which is not a real page and will break your check. This is why i defined an array of URLs in `lighthouserc.js` to run Lighthouse with. Reconfigure them with your own pages (`index` at least)
 
 ### 📊 Bundle stats
 

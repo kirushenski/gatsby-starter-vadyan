@@ -19,11 +19,11 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'plugin:mdx/recommended',
-    'plugin:prettier/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
     'plugin:jest-dom/recommended',
     'plugin:testing-library/recommended',
+    'prettier',
   ],
   rules: {
     '@typescript-eslint/ban-ts-comment': 1,

@@ -15,8 +15,10 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: yarn
-      - name: Lint & format
+      - name: Lint
         run: yarn lint
+      - name: Format
+        run: yarn format
       - name: Type check
         run: yarn type-check
       - name: Unit test
