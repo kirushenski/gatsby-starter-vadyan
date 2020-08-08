@@ -93,7 +93,7 @@ Chosen toolset is reliable and gives you great developer experience. But it shou
    You can use [Gatsby CLI](https://www.gatsbyjs.org/docs/gatsby-cli/):
 
    ```shell
-   gatsby new project-name p1t1ch/gatsby-starter-vadyan
+   gatsby new project-name https://github.com/p1t1ch/gatsby-starter-vadyan
    ```
 
    🚨 Use Yarn as package manager for Gatsby CLI because npm caused problems with this setup (with Storybook in particular)
