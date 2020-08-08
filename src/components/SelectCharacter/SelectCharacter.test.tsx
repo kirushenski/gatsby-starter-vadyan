@@ -75,7 +75,7 @@ test('renders character with id equals "1" by default', async () => {
       padding: 16px;
       background-color: #fcfaff;
       color: #362066;
-      box-shadow: 0 0 8px 0 #362066;
+      box-shadow: 0 0 4px 1px #362066;
     }
 
     .emotion-0 {
