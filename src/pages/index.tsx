@@ -24,7 +24,7 @@ const IndexPage = () => {
       <Seo title="Quick start" />
       <h1>Quick start</h1>
       <p>Start new project with Gatsby CLI:</p>
-      <Code>gatsby new project-name https://github.com/p1t1ch/gatsby-starter</Code>
+      <Code>gatsby new project-name p1t1ch/gatsby-starter-vadyan</Code>
     </Layout>
   )
 }
