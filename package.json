@@ -54,7 +54,7 @@
     "last 2 iOS major versions"
   ],
   "dependencies": {
-    "@apollo/client": "^3.1.2",
+    "@apollo/client": "^3.1.3",
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
@@ -87,9 +87,9 @@
     "@testing-library/cypress": "^6.0.0",
     "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/react": "^10.4.8",
-    "@testing-library/user-event": "^12.1.0",
-    "@types/jest": "^26.0.8",
-    "@types/react": "^16.9.44",
+    "@testing-library/user-event": "^12.1.1",
+    "@types/jest": "^26.0.9",
+    "@types/react": "^16.9.45",
     "@types/react-dom": "^16.9.8",
     "@types/react-helmet": "^6.0.0",
     "@types/testing-library__jest-dom": "^5.9.2",
@@ -118,11 +118,12 @@
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "serve": "^11.3.2",
-    "start-server-and-test": "^1.11.2",
+    "start-server-and-test": "^1.11.3",
     "typescript": "^3.9.7"
   },
   "resolutions": {
-    "babel-plugin-remove-graphql-queries": "2.9.14"
+    "babel-plugin-remove-graphql-queries": "2.9.14",
+    "jsdom": "16.3.0"
   },
   "engines": {
     "node": ">= 10.14.2"

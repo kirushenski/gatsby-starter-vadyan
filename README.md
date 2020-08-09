@@ -205,6 +205,8 @@ This starter uses Jest with React Testing Library to create unit and integration
 
 🚨 I was trying my best to include testing best practices here. For example, Jest and Cypress assertions are extended with assertions from RTL and `user-event` module is used instead of simple `fireEvent`. You can read more about all of these techniques in [Kent C. Dodds blog](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
 
+🚨 Jest uses `jsdom` library internally. But in the last version this library started generating a lot of `Not implemented: window.computedStyle(elt, pseudoElt)` warnings (refer to [issue](https://github.com/jsdom/jsdom/issues/3025)), so i had to lock it to the previous version. When this will be solved we can remove it from `resolutions` field
+
 ### 🎨 Styling setup
 
 Starter includes Emotion as the main styling solution with Polished library which includes some useful CSS in JS helpers.
@@ -223,7 +225,7 @@ Modify stories formats and addons list in `.storybook/main` as you wish. Starter
 
 🚨 To get Gatsby queries working you need to have `public/static` folder with pre-build static queries results. So make sure that you run `yarn dev` or `yarn build` command before. And if you change queries while in Storybook, you need to repeat this process again
 
-🚨 Gatsby integration with Storybook was accidentally broken in the previous release (refer to [issue](https://github.com/gatsbyjs/gatsby/issues/26099)). As temporary solution `gatsby` and `babel-plugin-remove-graphql-queries` versions are locked in `package.json`. When this will be solved we can upgrade Gatsby and remove `resolutions` field
+🚨 Gatsby integration with Storybook was accidentally broken in the previous release (refer to [issue](https://github.com/gatsbyjs/gatsby/issues/26099)). As temporary solution `gatsby` and `babel-plugin-remove-graphql-queries` versions are locked in `package.json`. When this will be solved we can upgrade Gatsby and remove plugin from `resolutions` field
 
 🚨 `.storybook/preview-head.html` file was added to override stories background color. In other way background will be the same as your global body color (in this demo its purple)
 
