@@ -123,17 +123,17 @@ This project uses `npm scripts` to communicate with the app. Here's the full lis
 | `build`              | Build app in prod mode in `public` folder                                                         |
 | `start`              | Browse production build from `public` folder locally on 8000                                      |
 | `storybook`          | Start a Storybook in dev mode on 8080                                                             |
-| `storybook:build *`  | Build static Storybook version in `docs` folder                                                   |
-| `storybook:start *`  | Browse production build from `docs` folder locally on 8080                                        |
+| `storybook:build`    | Build static Storybook version in `docs` folder                                                   |
+| `storybook:start`    | Browse production build from `docs` folder locally on 8080                                        |
 | `test`               | Run Jest. In watch mode locally or in coverage mode on CI                                         |
 | `test:coverage`      | Run Jest in coverage mode. Use locally when you want to generate coverage reports                 |
-| `test:watch *`       | Run Jest in watch mode                                                                            |
-| `cy:open *`          | Run Cypress in browser mode                                                                       |
-| `cy:run *`           | Run Cypress in headless mode                                                                      |
+| `test:watch`         | Run Jest in watch mode                                                                            |
+| `cy:open`            | Run Cypress in browser mode                                                                       |
+| `cy:run`             | Run Cypress in headless mode                                                                      |
 | `test:e2e`           | Run Cypress. In browser mode locally or in headless mode on CI. Server start includes             |
-| `pretest:e2e:run *`  | Auto script to build app before headless Cypress run                                              |
+| `pretest:e2e:run`    | Auto script to build app before headless Cypress run                                              |
 | `test:e2e:run`       | Run Cypress in headless mode with server start. Run locally when you need just to check E2E tests |
-| `test:e2e:open *`    | Run Cypress in browser mode with server start                                                     |
+| `test:e2e:open`      | Run Cypress in browser mode with server start                                                     |
 | `coverage`           | Оpen coverage reports. You need to generate them with `test:coverage` first                       |
 | `stats`              | Open Webpack Bundle Analyzer reports. You need to generate them with `build` first                |
 | `lint`               | Run ESLint in fix mode on `.tsx`, `.ts`, `.mdx` and `.js` files except of ignored folders         |
@@ -141,8 +141,6 @@ This project uses `npm scripts` to communicate with the app. Here's the full lis
 | `type-check`         | Run Typescript compiler for types checking                                                        |
 | `validate`           | Full code quality control: `lint`, `type-check`, `test:coverage` and `test:e2e` in one command    |
 | `clean`              | Clean `public` and `.cache` folders for the moments when you cannot rely on cache                 |
-
-\* — helper scripts. You don't need to run them yourself most of the time.
 
 ## 🧭 Detailed walkthrough
 
