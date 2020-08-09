@@ -3,10 +3,11 @@ import { Link } from 'gatsby'
 import { useTheme } from 'emotion-theming'
 import styled from '@emotion/styled'
 import { transitions, size, padding } from 'polished'
-import { ReactComponent as GithubIcon } from '@/icons/github.svg'
 import media from '@/utils/media'
 import typography from '@/utils/typography'
 import { Theme, ThemeProps } from '@theme'
+import { ReactComponent as LogoIcon } from '@/icons/logo.svg'
+import { ReactComponent as GithubIcon } from '@/icons/github.svg'
 
 const Header = styled.header(({ theme }: ThemeProps) => ({
   display: 'grid',
@@ -19,13 +20,6 @@ const Header = styled.header(({ theme }: ThemeProps) => ({
   boxShadow: theme.shadows.basic,
   zIndex: 1,
   [media.sm]: { gridTemplateColumns: 'auto 1fr', gridColumnGap: theme.grid * 2 },
-}))
-
-const Avatar = styled.div(({ theme }: ThemeProps) => ({
-  ...size(theme.grid * 13),
-  borderRadius: '50%',
-  backgroundColor: theme.colors.purpleLight,
-  [media.sm]: { ...size(theme.grid * 8) },
 }))
 
 const Nav = styled.nav(({ theme }: ThemeProps) => ({
@@ -69,7 +63,12 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <div css={{ display: 'grid', gridTemplateRows: 'auto 1fr auto', minHeight: '100vh' }}>
       <Header>
-        <Avatar />
+        <LogoIcon
+          css={{
+            ...size(theme.grid * 13),
+            [media.sm]: { ...size(theme.grid * 8) },
+          }}
+        />
         <Link to="/" css={typography('title')}>
           Gatsby Starter Vadyan
         </Link>

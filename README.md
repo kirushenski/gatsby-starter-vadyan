@@ -1,14 +1,13 @@
 <p align="center">
   <a href="https://github.com/p1t1ch/gatsby-starter-vadyan">
     <img
-      src="src/images/favicon.png"
-      height="104"
+      src="src/images/logo-text.png"
+      height="160"
       alt="Gatsby Starter Vadyan"
     />
   </a>
 </p>
 
-<h1 align="center">Gatsby Starter Vadyan</h1>
 <p align="center"><strong align="center">A modern content-agnostic Gatsby starter</strong></p>
 
 <p align="center">
