@@ -32,7 +32,7 @@ const List = styled.dl(({ theme }: ThemeProps) => ({
 }))
 
 export const GET_CHARACTER_DATA = gql`
-  query GetCharacterData($id: ID) {
+  query GetCharacterData($id: ID!) {
     character(id: $id) {
       name
       species
