@@ -14,9 +14,3 @@ test('title in header must be a link to the main page', () => {
   const title = screen.getByRole('link', { name: /gatsby starter vadyan/i })
   expect(title).toHaveAttribute('href', '/')
 })
-
-test('footer must contain link to the Github repository', () => {
-  render(<Layout>Page content</Layout>)
-  const title = screen.getByRole('link', { name: /github/i })
-  expect(title).toBeInTheDocument()
-})
