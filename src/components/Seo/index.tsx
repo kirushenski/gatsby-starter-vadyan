@@ -71,24 +71,16 @@ const Seo = ({ title, description, keywords, image, pathname }: SeoProps) => {
       <meta name="og:title" content={seo.title} />
       <meta name="og:description" content={seo.description} />
       {seo.url && <meta property="og:url" content={seo.url} />}
-      {seo.image && (
-        <>
-          <meta property="og:image" content={seo.image} />
-          <meta property="og:image:alt" content={seo.description} />
-        </>
-      )}
+      {seo.image && <meta property="og:image" content={seo.image} />}
+      {seo.image && <meta property="og:image:alt" content={seo.description} />}
       {seo.facebook && <meta property="og:site_name" content={seo.facebook} />}
 
       <meta name="twitter:card" content={seo.image ? 'summary_large_image' : 'summary'} />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       {seo.url && <meta property="twitter:url" content={seo.url} />}
-      {seo.image && (
-        <>
-          <meta name="twitter:image" content={seo.image} />
-          <meta name="twitter:image:alt" content={seo.description} />
-        </>
-      )}
+      {seo.image && <meta name="twitter:image" content={seo.image} />}
+      {seo.image && <meta name="twitter:image:alt" content={seo.description} />}
       {seo.twitter && <meta name="twitter:creator" content={seo.twitter} />}
     </Helmet>
   )
