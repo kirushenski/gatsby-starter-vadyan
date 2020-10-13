@@ -204,8 +204,6 @@ This starter uses Jest with React Testing Library to create unit and integration
 
 🚨 I was trying my best to include testing best practices here. For example, Jest and Cypress assertions are extended with assertions from RTL and `user-event` module is used instead of simple `fireEvent`. You can read more about all of these techniques in [Kent C. Dodds blog](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
 
-🚨 Jest uses `jsdom` library internally. But in the last version this library started generating a lot of `Not implemented: window.computedStyle(elt, pseudoElt)` warnings (refer to [issue](https://github.com/jsdom/jsdom/issues/3025)), so i had to lock it to the previous version. When this will be solved we can remove it from `resolutions` field
-
 ### 🎨 Styling setup
 
 Starter includes Emotion as the main styling solution with Polished library which includes some useful CSS in JS helpers.
@@ -222,9 +220,7 @@ Starter uses Storybook v6 with last bleeding-edge features like controls, docs m
 
 Modify stories formats and addons list in `.storybook/main` as you wish. Starter supports only mdx format by default.
 
-🚨 To get Gatsby queries working you need to have `public/static` folder with pre-build static queries results. So make sure that you run `yarn dev` or `yarn build` command before. And if you change queries while in Storybook, you need to repeat this process again
-
-🚨 Gatsby integration with Storybook was accidentally broken in the previous release (refer to [issue](https://github.com/gatsbyjs/gatsby/issues/26099)). As temporary solution `gatsby` and `babel-plugin-remove-graphql-queries` versions are locked in `package.json`. When this will be solved we can upgrade Gatsby and remove plugin from `resolutions` field
+🚨 To get Gatsby queries working you need to have `public/static` folder with pre-build static queries results. So make sure that you run `yarn dev` or `yarn build` command before. And if you change queries while in Storybook, you need to repeat this process again. For the same reason script `copy-static-queries` is added to Storybook scripts
 
 🚨 `.storybook/preview-head.html` file was added to override stories background color. In other way background will be the same as your global body color (in this demo its purple)
 
@@ -281,5 +277,3 @@ To create your own alias you need to add it to:
 1. **.storybook/main.js** — to make it available in Storybook environment
 1. **tsconfig.json** — to make Typescript understand it
 1. **.eslintrc.js** — to make ESLint understand it
-
-> Aaand this is it! Feel free to ask me more about the setup and i will appreciate if you give project a star ⭐️ - this levels up starter position in Gatsby catalog
