@@ -31,7 +31,7 @@ Setting up a new project in a modern web can be a tedious process. You often nee
 
 This project is a [Gatsby starter](https://www.gatsbyjs.org/starters/?v=2). Gatsby core gives you built-in performance, SEO support (via static rendering), and access to its awesome [plugins library](https://www.gatsbyjs.org/plugins/). Starter’s purpose is to give you the opinionated setup of preconfigured tools without making opinions about your next content: it can be a blog, portfolio, landing, some cool demo, or whatever you want.
 
-The chosen toolset is reliable and gives you a great developer experience. But it shouldn’t be difficult to replace one tool with another. If you prefer `styled-components` instead of `Emotion` or you don’t need dynamic data fetching with `Apollo Client` for your next project, then just move configuration around a little bit. Removing things is always more enjoyable than adding  🙂
+The chosen toolset is reliable and gives you a great developer experience. But it shouldn’t be difficult to replace one tool with another. If you prefer `styled-components` instead of `Emotion` or you don’t need dynamic data fetching with `Apollo Client` for your next project, then just move configuration around a little bit. Removing things is always more enjoyable than adding...
 
 ## 🔥 Hot features
 
@@ -95,11 +95,11 @@ The chosen toolset is reliable and gives you a great developer experience. But i
    gatsby new project-name https://github.com/p1t1ch/gatsby-starter-vadyan
    ```
 
-   🚨 Use Yarn as a package manager for Gatsby CLI because npm caused problems with this setup (with Storybook in particular)
+   _Use Yarn as a package manager for Gatsby CLI because npm caused problems with this setup (with Storybook in particular)_
 
    Or use Github template feature — click on the big green button atop of the page 🔝
 
-   _If you don't use Gatsby CLI, then you also need to install dependencies for the first time:_
+   If you don't use Gatsby CLI, then you also need to install dependencies for the first time:
 
    ```bash
    yarn
@@ -168,15 +168,15 @@ In `config` folder you can find the most of project settings:
 1. **index.js** — variables for Gatsby config. Most of them are used as SEO and manifest data
 1. **theme.ts** — theme variables which serve as Emotion theme
 
-🚨 You can change theme object structure as you like, but keep in mind that `breakpoints` and `typography` fields are used in `media` and `typography` utils accordingly
+You can change theme object structure as you like, but keep in mind that `breakpoints` and `typography` fields are used in `media` and `typography` utils accordingly
 
 ### 💬 Typescript
 
-🚨 Main config is written in `tsconfig.json`, but `cypress` folder has its own config which extends the main one. Additional config is required to avoid conflicts between global Jest and Chai/Mocha commands with the same namings
+Main config is written in `tsconfig.json`, but `cypress` folder has its own config which extends the main one. Additional config is required to avoid conflicts between global Jest and Chai/Mocha commands with the same namings
 
-🚨 `types` field is used to **ONLY** include defined types for global scope. It requires getting Emotion `css` prop working and to avoid described conflicts between testing tools by including different types for them. Modify this array if you need to include new global scope typings
+`types` field is used to **ONLY** include defined types for global scope. It requires getting Emotion `css` prop working and to avoid described conflicts between testing tools by including different types for them. Modify this array if you need to include new global scope typings
 
-🚨 `include` field is used to run compiler only in defined directories because we again need to exclude `cypress` folder
+`include` field is used to run compiler only in defined directories because we again need to exclude `cypress` folder
 
 ### 🥇 Linting environment
 
@@ -186,23 +186,23 @@ Prettier config is available in `.prettierrc`. Change it as you wish as well.
 
 lint-staged runs `eslint`, `prettier` and `tsc` commands on changed files via Husky pre-commit hook.
 
-🚨 Similar to Typescript, for ESLint in `cypress` folder additional config is defined to solve conflicts in rules between global Jest and Chai/Mocha commands
+Similar to Typescript, for ESLint in `cypress` folder additional config is defined to solve conflicts in rules between global Jest and Chai/Mocha commands
 
-🚨 `eslintIgnore` field in `package.json` was added to include `.storybook` folder in the list of linted directories because all dot folders are excluded by default. Otherwise, I would just use `--ignore-path .gitignore` and be fine. Prettier on other hand respects `.storybook` folder
+`eslintIgnore` field in `package.json` was added to include `.storybook` folder in the list of linted directories because all dot folders are excluded by default. Otherwise, I would just use `--ignore-path .gitignore` and be fine. Prettier on other hand respects `.storybook` folder
 
-🚨 ESLint and Prettier are configured in a way when styling rules are excluded from ESLint. So firstly, you don't have conflicts between these tools, and secondly, if you have ESLint and Prettier setup in the code editor, you'll not be bothered with wiggly red lines for styling rules
+ESLint and Prettier are configured in a way when styling rules are excluded from ESLint. So firstly, you don't have conflicts between these tools, and secondly, if you have ESLint and Prettier setup in the code editor, you'll not be bothered with wiggly red lines for styling rules
 
-🚨 `type-check` command on pre-commit runs on all files because tsc and lint-staged don't work together
+`type-check` command on pre-commit runs on all files because tsc and lint-staged don't work together
 
 ### 🎲 Testing environment
 
 This starter uses Jest with React Testing Library to create unit and integration tests, and Cypress to create E2E tests.
 
-🚨 We need to render components within `RootProvider`, so I've created **test-utils** module as a wrapper around RTL. You now need to import `@test-utils` instead of `@testing-library/react` in test files. Read more about this approach in [official documentation](https://testing-library.com/docs/react-testing-library/setup#custom-render)
+We need to render components within `RootProvider`, so I've created **test-utils** module as a wrapper around RTL. You now need to import `@test-utils` instead of `@testing-library/react` in test files. Read more about this approach in [official documentation](https://testing-library.com/docs/react-testing-library/setup#custom-render)
 
-🚨 For Apollo Client mocking, `RootProvider` supports `apolloMocks` prop. Add this to replace ApolloProvider with MockedProvider with the specified response. More about this approach in [Apollo Client docs](https://www.apollographql.com/docs/react/development-testing/testing/)
+For Apollo Client mocking, `RootProvider` supports `apolloMocks` prop. Add this to replace ApolloProvider with MockedProvider with the specified response. More about this approach in [Apollo Client docs](https://www.apollographql.com/docs/react/development-testing/testing/)
 
-🚨 I was trying my best to include testing best practices here. For example, Jest and Cypress assertions are extended with assertions from RTL and `user-event` module is used instead of a simple `fireEvent`. You can read more about all of these techniques in [Kent C. Dodds blog](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+I was trying my best to include testing best practices here. For example, Jest and Cypress assertions are extended with assertions from RTL and `user-event` module is used instead of a simple `fireEvent`. You can read more about all of these techniques in [Kent C. Dodds blog](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
 
 ### 🎨 Styling setup
 
@@ -212,7 +212,7 @@ Whole application wrapped with ThemeProvider so you get access to the theme obje
 
 I prefer to use styled components and css prop object syntax, but it doesn't matter at all. Just choose what you prefer best.
 
-🚨 Don't forget to give Typescript information about your theme by exporting its types from `@theme`. So it would be like `styled.div(({ theme }: ThemeProps) => ({})` for styled components and `useTheme<Theme>()` for the hook approach
+Don't forget to give Typescript information about your theme by exporting its types from `@theme`. So it would be like `styled.div(({ theme }: ThemeProps) => ({})` for styled components and `useTheme<Theme>()` for the hook approach
 
 ### 📕 Storybook
 
@@ -220,15 +220,15 @@ Starter uses Storybook v6 with last bleeding-edge features like controls, docs m
 
 Modify story formats and addons list in `.storybook/main` as you wish. Starter supports only mdx format by default.
 
-🚨 To get Gatsby queries working you need to have `public/static` folder with pre-build static queries results. So make sure that you run `yarn dev` or `yarn build` command before. And if you change queries while in Storybook, you need to repeat this process again. For the same reason script `copy-static-queries` is added to Storybook scripts
+To get Gatsby queries working you need to have `public/static` folder with pre-build static queries results. So make sure that you run `yarn dev` or `yarn build` command before. And if you change queries while in Storybook, you need to repeat this process again. For the same reason script `copy-static-queries` is added to Storybook scripts
 
-🚨 `.storybook/preview-head.html` file was added to override stories' background color. In another way, the background will be the same as your global body color (in this demo its purple)
+`.storybook/preview-head.html` file was added to override stories' background color. In another way, the background will be the same as your global body color (in this demo its purple)
 
 ### 🖼 Assets management
 
 Gatsby uses webpack under the hood, so all assets can be included in your scripts as modules via `import`.
 
-🚨 Typescript doesn't know a thing about this, so `src/index.d.ts` file is intended to give him this type of knowledge
+Typescript doesn't know a thing about this, so `src/index.d.ts` file is intended to give him this type of knowledge
 
 Svg files are converted in React components via `@svgr/webpack` in a build time so you get 1st class developer experience with icons and will be ended with inline svg in the markup which gives to your users the best of [performance and accessibility](https://medium.com/@marcintreder/design-system-sprint-6-the-fastest-icons-on-earth-bf91c0a47ef9).
 
@@ -246,11 +246,11 @@ CI/CD includes validation checks (linting, formatting, type checking, unit and E
 
 Of course, all of these is a personal thing, and you can create your own CI/CD process from scratch. Starter's purpose is just providing sensible defaults and at least give ready to use setup to future me.
 
-🚨 App deploys to Netlify are running automatically without additional setup requirements. All you need is to create a new project from Github repo on [Netlify website](https://app.netlify.com/signup)
+App deploys to Netlify are running automatically without additional setup requirements. All you need is to create a new project from Github repo on [Netlify website](https://app.netlify.com/signup)
 
-🚨 Github Actions workflow requires you to have 2 secrets in your repository: `CHROMATIC_PROJECT_TOKEN` which you get when signed in with [Chromatic](https://www.chromatic.com/start) and `LHCI_GITHUB_APP_TOKEN` which you can get with [installing Lighthouse Github app](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md#github-app-method-recommended)
+Github Actions workflow requires you to have 2 secrets in your repository: `CHROMATIC_PROJECT_TOKEN` which you get when signed in with [Chromatic](https://www.chromatic.com/start) and `LHCI_GITHUB_APP_TOKEN` which you can get with [installing Lighthouse Github app](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md#github-app-method-recommended)
 
-🚨 Lighthouse by default will run on **ALL** html files in `public` folder. Firstly, this takes a lot of time, and secondly, this includes `offline-plugin-app-shell-fallback` which is not a real page and will break your check. This is why I defined an array of URLs in `lighthouserc.js` to run Lighthouse with. Reconfigure them with your own pages (`index` at least)
+Lighthouse by default will run on **ALL** html files in `public` folder. Firstly, this takes a lot of time, and secondly, this includes `offline-plugin-app-shell-fallback` which is not a real page and will break your check. This is why I defined an array of URLs in `lighthouserc.js` to run Lighthouse with. Reconfigure them with your own pages (`index` at least)
 
 ### 📊 Bundle stats
 
