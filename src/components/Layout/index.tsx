@@ -29,8 +29,11 @@ const Nav = styled.nav(({ theme }: ThemeProps) => ({
 
 const StyledLink = styled(Link)(({ theme }: ThemeProps) => ({
   ...typography('nav'),
-  ...transitions('font-weight', theme.transitions.basic),
-  ':hover, &.active': { fontWeight: 800 },
+  ...transitions(['font-weight'], theme.transitions.long),
+  ':hover, &.active': {
+    fontWeight: 800,
+    ...transitions(['font-weight'], theme.transitions.short),
+  },
 }))
 
 const Main = styled.main(({ theme }: ThemeProps) => ({

@@ -15,16 +15,26 @@ const GlobalStyles = () => {
       styles={[
         ...normalize(),
         {
-          '*': {
+          '*, *::before, *::after': {
             boxSizing: 'border-box',
           },
-          body: {
+          '::selection': {
+            backgroundColor: theme.colors.purpleDark,
+            color: theme.colors.purpleLight,
+          },
+          html: {
             fontFamily: [theme.typography.family, ...theme.typography.stack].join(', '),
+            scrollBehavior: 'smooth',
+            '@media (prefers-reduced-motion)': {
+              scrollBehavior: 'auto',
+            },
+          },
+          body: {
             ...typography('body'),
             backgroundColor: theme.colors.purpleDark,
             color: theme.colors.purpleLight,
           },
-          'h1, h2, h3, h4, h5, h6, p, ol, ul, dl, dd': {
+          'h1, h2, h3, h4, h5, h6, p, ol, ul, dl, dd, hr, blockquote, figure': {
             margin: 0,
             padding: 0,
           },
@@ -39,15 +49,31 @@ const GlobalStyles = () => {
           },
           [buttons()]: {
             border: 'none',
-            ...transitions(['color', 'background-color'], theme.transitions.basic),
+            padding: 0,
+            background: 'none',
+            cursor: 'pointer',
+            color: theme.colors.purpleLight,
+            ...transitions(['color', 'background-color'], theme.transitions.long),
+            ':hover': {
+              ...transitions(['color', 'background-color'], theme.transitions.short),
+            },
           },
           a: {
             textDecoration: 'none',
             color: theme.colors.purpleLight,
-            ...transitions('color', theme.transitions.basic),
+            ...transitions(['color'], theme.transitions.long),
+            ':hover': {
+              ...transitions(['color'], theme.transitions.short),
+            },
+          },
+          strong: {
+            fontWeight: 700,
           },
           svg: {
             fill: 'currentColor',
+          },
+          li: {
+            listStyle: 'none',
           },
         },
       ]}

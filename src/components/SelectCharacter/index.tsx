@@ -26,9 +26,10 @@ const Button = styled.button(({ theme }: ThemeProps) => ({
   borderRadius: 4,
   boxShadow: theme.shadows.basic,
   backgroundSize: '200% auto',
-  ...transitions('background-position', theme.transitions.basic),
+  ...transitions(['background-position'], theme.transitions.long),
   ':hover': {
     backgroundPosition: 'right center',
+    ...transitions(['background-position'], theme.transitions.short),
   },
 }))
 

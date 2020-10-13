@@ -56,7 +56,8 @@ const shadows = {
 }
 
 const transitions = {
-  basic: `300ms ease`,
+  short: '200ms ease-in-out',
+  long: '500ms ease-in-out',
 }
 
 const theme = {
