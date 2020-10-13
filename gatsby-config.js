@@ -1,4 +1,3 @@
-const path = require('path')
 const config = require('./config')
 
 module.exports = {
@@ -18,15 +17,15 @@ module.exports = {
       resolve: 'gatsby-alias-imports',
       options: {
         aliases: {
-          '@theme': path.join(__dirname, 'config/theme.ts'),
-          '@': path.join(__dirname, 'src'),
+          '@theme': `${__dirname}/config/theme.ts`,
+          '@': `${__dirname}/src`,
         },
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: path.join(__dirname, 'src/images'),
+        path: `${__dirname}/src/images`,
       },
     },
     {
