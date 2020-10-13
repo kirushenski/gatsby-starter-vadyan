@@ -3,9 +3,9 @@ import 'focus-visible'
 import { Global } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 import { buttons, transitions, normalize } from 'polished'
-import Manrope from '@/fonts/Manrope.woff2'
 import typography from '@/utils/typography'
 import { Theme } from '@theme'
+import '@/fonts/index.css'
 
 const GlobalStyles = () => {
   const theme = useTheme<Theme>()
@@ -14,14 +14,6 @@ const GlobalStyles = () => {
     <Global
       styles={[
         ...normalize(),
-        {
-          '@font-face': {
-            fontFamily: 'Manrope',
-            src: `url(${Manrope}) format('woff2-variations')`,
-            fontDisplay: 'swap',
-            fontWeight: '200 800' as any,
-          },
-        },
         {
           '*': {
             boxSizing: 'border-box',
