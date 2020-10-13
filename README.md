@@ -27,11 +27,11 @@
 
 ## 🤔 Why?
 
-Setting up a new project in a modern web can be a tedious process. You often need to setup stuff like Typescript / ESLint / Jest / Storybook, and making all these tools working together can be especially tricky. You can install a framework like CRA, but it just gives you instructions how to manage it yourself. So you need to configurate your basic setup from project to project. This process kills the inspiration. This is not fun!
+Setting up a new project in a modern web can be a tedious process. You often need to setup stuff like Typescript / ESLint / Jest / Storybook, and making all these tools work together can be especially tricky. You can install a framework like CRA, but it just gives you instructions on how to manage it yourself. So you need to configure your basic setup from project to project. This process kills inspiration. This is not fun!
 
-This project is a [Gatsby starter](https://www.gatsbyjs.org/starters/?v=2). Gatsby core gives you built-in performance, SEO support (via static rendering) and access to its awesome [plugins library](https://www.gatsbyjs.org/plugins/). Starter's purpose is to give you opinionated setup of preconfigured tools without making opinions about your next content: in can be a blog, portfolio, landing, some cool demo or whatever you want.
+This project is a [Gatsby starter](https://www.gatsbyjs.org/starters/?v=2). Gatsby core gives you built-in performance, SEO support (via static rendering), and access to its awesome [plugins library](https://www.gatsbyjs.org/plugins/). Starter’s purpose is to give you the opinionated setup of preconfigured tools without making opinions about your next content: it can be a blog, portfolio, landing, some cool demo, or whatever you want.
 
-Chosen toolset is reliable and gives you great developer experience. But it shouldn't be difficult to replace some tool with another. If you prefer `styled-components` instead of `Emotion` or you don't need dynamic data fetching with `Apollo Client` for your next project, then just move configuration around a little bit. Removing things always is more enjoyable process than adding 🙂
+The chosen toolset is reliable and gives you a great developer experience. But it shouldn’t be difficult to replace one tool with another. If you prefer `styled-components` instead of `Emotion` or you don’t need dynamic data fetching with `Apollo Client` for your next project, then just move configuration around a little bit. Removing things is always more enjoyable than adding  🙂
 
 ## 🔥 Hot features
 
@@ -95,7 +95,7 @@ Chosen toolset is reliable and gives you great developer experience. But it shou
    gatsby new project-name https://github.com/p1t1ch/gatsby-starter-vadyan
    ```
 
-   🚨 Use Yarn as package manager for Gatsby CLI because npm caused problems with this setup (with Storybook in particular)
+   🚨 Use Yarn as a package manager for Gatsby CLI because npm caused problems with this setup (with Storybook in particular)
 
    Or use Github template feature — click on the big green button atop of the page 🔝
 
@@ -107,7 +107,7 @@ Chosen toolset is reliable and gives you great developer experience. But it shou
 
 1. **Start developing**
 
-   Move to the just created directory and start development server on http://localhost:8000:
+   Move to the just created directory and start the development server on http://localhost:8000:
 
    ```shell
    cd project-name && yarn dev
@@ -145,7 +145,7 @@ This project uses `npm scripts` to communicate with the app. Here's the full lis
 
 ## 🧭 Detailed walkthrough
 
-Here goes some details which can help you get starting. Also i will cover a few tricky parts of the setup.
+Here go some details which can help you get starting. Also, I will cover a few tricky parts of the setup.
 
 ### 🧱 Source content
 
@@ -153,20 +153,20 @@ In `src` folder you can find some low-level ready to use solutions:
 
 1. **components/RootWrapper** — global wrapper with all providers to add to Gatsby, Storybook and RTL
 1. **components/GlobalStyles** — place to include global styling like normalize, font-face, focus-visible and tags overrides
-1. **components/Layout** — content which keeps the same between all pages like header & footer. Put your page content as its children
-1. **components/Seo** — all meta tags to include in head via react-helmet. Reads defaults from siteMetadata, but can be overrided by props
+1. **components/Layout** — content that keeps the same between all pages like header & footer. Put your page content as its children
+1. **components/Seo** — all meta tags to include in head via react-helmet. Reads defaults from siteMetadata, but can be overriden by props
 1. **utils/typography** — helper to generate typography-related CSS from theme config
 1. **utils/media** — helper to generate CSS media queries from breakpoints list in theme config
 1. **utils/apollo** — Apollo Client setup
 
-All others content was created for demo purposes. Remove it when starting a new project.
+All other content was created for demo purposes. Remove it when starting a new project.
 
 ### ⚙️ Configuration
 
 In `config` folder you can find the most of project settings:
 
 1. **index.js** — variables for Gatsby config. Most of them are used as SEO and manifest data
-1. **theme.ts** — theme variables which serves as Emotion theme
+1. **theme.ts** — theme variables which serve as Emotion theme
 
 🚨 You can change theme object structure as you like, but keep in mind that `breakpoints` and `typography` fields are used in `media` and `typography` utils accordingly
 
@@ -174,13 +174,13 @@ In `config` folder you can find the most of project settings:
 
 🚨 Main config is written in `tsconfig.json`, but `cypress` folder has its own config which extends the main one. Additional config is required to avoid conflicts between global Jest and Chai/Mocha commands with the same namings
 
-🚨 `types` field is used to **ONLY** include defined types for global scope. It requires to get Emotion `css` prop working and to avoid described conflicts between testing tools by including different types for them. Modify this array if you need to include new global scope typings
+🚨 `types` field is used to **ONLY** include defined types for global scope. It requires getting Emotion `css` prop working and to avoid described conflicts between testing tools by including different types for them. Modify this array if you need to include new global scope typings
 
 🚨 `include` field is used to run compiler only in defined directories because we again need to exclude `cypress` folder
 
 ### 🥇 Linting environment
 
-Project setups ESLint config with collection of recommended rules from used tools and a few opinionated overrides. Feel free to change rules in `eslintrc.js`.
+Project setups ESLint config with a collection of recommended rules from used tools and a few opinionated overrides. Feel free to change rules in `eslintrc.js`.
 
 Prettier config is available in `.prettierrc`. Change it as you wish as well.
 
@@ -188,9 +188,9 @@ lint-staged runs `eslint`, `prettier` and `tsc` commands on changed files via Hu
 
 🚨 Similar to Typescript, for ESLint in `cypress` folder additional config is defined to solve conflicts in rules between global Jest and Chai/Mocha commands
 
-🚨 `eslintIgnore` field in `package.json` was added to include `.storybook` folder in list of linted directories because all dot folders are excluded by default. Otherwise i would just use `--ignore-path .gitignore` and be fine. Prettier on other hand respects `.storybook` folder
+🚨 `eslintIgnore` field in `package.json` was added to include `.storybook` folder in the list of linted directories because all dot folders are excluded by default. Otherwise, I would just use `--ignore-path .gitignore` and be fine. Prettier on other hand respects `.storybook` folder
 
-🚨 ESLint and Prettier are configured in a way when styling rules are excluded from ESLint. So firstly, you don't have conflicts between these tools, and secondly if you have ESLint and Prettier setup in code editor, you'll not be bothered with wiggly red lines for styling rules
+🚨 ESLint and Prettier are configured in a way when styling rules are excluded from ESLint. So firstly, you don't have conflicts between these tools, and secondly, if you have ESLint and Prettier setup in the code editor, you'll not be bothered with wiggly red lines for styling rules
 
 🚨 `type-check` command on pre-commit runs on all files because tsc and lint-staged don't work together
 
@@ -198,17 +198,17 @@ lint-staged runs `eslint`, `prettier` and `tsc` commands on changed files via Hu
 
 This starter uses Jest with React Testing Library to create unit and integration tests, and Cypress to create E2E tests.
 
-🚨 We need to render components within `RootProvider`, so i've created **test-utils** module as a wrapper around RTL. You now need to import `@test-utils` instead of `@testing-library/react` in test files. Read more about this approach in [official documentation](https://testing-library.com/docs/react-testing-library/setup#custom-render)
+🚨 We need to render components within `RootProvider`, so I've created **test-utils** module as a wrapper around RTL. You now need to import `@test-utils` instead of `@testing-library/react` in test files. Read more about this approach in [official documentation](https://testing-library.com/docs/react-testing-library/setup#custom-render)
 
-🚨 For Apollo Client mocking, `RootProvider` supports `apolloMocks` prop. Add this to replace ApolloProvider with MockedProvider with specified response. More about this approach in [Apollo Client docs](https://www.apollographql.com/docs/react/development-testing/testing/)
+🚨 For Apollo Client mocking, `RootProvider` supports `apolloMocks` prop. Add this to replace ApolloProvider with MockedProvider with the specified response. More about this approach in [Apollo Client docs](https://www.apollographql.com/docs/react/development-testing/testing/)
 
-🚨 I was trying my best to include testing best practices here. For example, Jest and Cypress assertions are extended with assertions from RTL and `user-event` module is used instead of simple `fireEvent`. You can read more about all of these techniques in [Kent C. Dodds blog](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
+🚨 I was trying my best to include testing best practices here. For example, Jest and Cypress assertions are extended with assertions from RTL and `user-event` module is used instead of a simple `fireEvent`. You can read more about all of these techniques in [Kent C. Dodds blog](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library)
 
 ### 🎨 Styling setup
 
 Starter includes Emotion as the main styling solution with Polished library which includes some useful CSS in JS helpers.
 
-Whole application wrapped with ThemeProvider so you get access to theme object on components level with `useTheme` hook or on styled components level via `theme` prop.
+Whole application wrapped with ThemeProvider so you get access to the theme object on components level with `useTheme` hook or on styled components level via `theme` prop.
 
 I prefer to use styled components and css prop object syntax, but it doesn't matter at all. Just choose what you prefer best.
 
@@ -216,13 +216,13 @@ I prefer to use styled components and css prop object syntax, but it doesn't mat
 
 ### 📕 Storybook
 
-Starter uses Storybook v6 with last bleeding-edge features like controls, docs mode, mdx support and more. It works with Gatsby so you can include components with static queries usage without splitting them in containers and pure components. And also stories are wrapped in `RootProvider`, so things like Apollo Client queries work too.
+Starter uses Storybook v6 with last bleeding-edge features like controls, docs mode, mdx support and more. It works with Gatsby so you can include components with static queries usage without splitting them into containers and pure components. And also stories are wrapped in `RootProvider`, so things like Apollo Client queries work too.
 
-Modify stories formats and addons list in `.storybook/main` as you wish. Starter supports only mdx format by default.
+Modify story formats and addons list in `.storybook/main` as you wish. Starter supports only mdx format by default.
 
 🚨 To get Gatsby queries working you need to have `public/static` folder with pre-build static queries results. So make sure that you run `yarn dev` or `yarn build` command before. And if you change queries while in Storybook, you need to repeat this process again. For the same reason script `copy-static-queries` is added to Storybook scripts
 
-🚨 `.storybook/preview-head.html` file was added to override stories background color. In other way background will be the same as your global body color (in this demo its purple)
+🚨 `.storybook/preview-head.html` file was added to override stories' background color. In another way, the background will be the same as your global body color (in this demo its purple)
 
 ### 🖼 Assets management
 
@@ -230,37 +230,37 @@ Gatsby uses webpack under the hood, so all assets can be included in your script
 
 🚨 Typescript doesn't know a thing about this, so `src/index.d.ts` file is intended to give him this type of knowledge
 
-Svg files are converted in React components via `@svgr/webpack` in a build time so you get 1st class developer experience with icons and will ended with inline svg in markup which gives to your users the best of [performance and accessibility](https://medium.com/@marcintreder/design-system-sprint-6-the-fastest-icons-on-earth-bf91c0a47ef9).
+Svg files are converted in React components via `@svgr/webpack` in a build time so you get 1st class developer experience with icons and will be ended with inline svg in the markup which gives to your users the best of [performance and accessibility](https://medium.com/@marcintreder/design-system-sprint-6-the-fastest-icons-on-earth-bf91c0a47ef9).
 
-Font assets are placed locally to give you more possibilities. For this demo i am using one variable font in woff2 format. For my supported browsers list this is enough, but you can also add `supports` check for variable font and fallback to simple woff2/woff assets of different weights
+Font assets are placed locally to give you more possibilities. For this demo, I am using one variable font in woff2 format. For my supported browsers' list this is enough, but you can also add `supports` check for variable font and fallback to simple woff2/woff assets of different weights
 
 ### ✨ PWA
 
-Thanks to awesome Gatsby plugins, this starter doesn't do much with service worker itself. `gatsby-plugin-offline` uses Workbox which simplifies service worker setup a lot, and then simplifies it even more in one config line. But this is more than enough for the project with simple requirements. Anyway you have opportunity to extend basic service worker with your own custom code later if you need to.
+Thanks to awesome Gatsby plugins, this starter doesn't do much with service worker itself. `gatsby-plugin-offline` uses Workbox which simplifies service worker setup a lot, and then simplifies it even more in one config line. But this is more than enough for the project with simple requirements. Anyway, you have an opportunity to extend basic service worker with your own custom code later if you need to.
 
 Starter also generates `manifest.webmanifest` in `public` folder, includes all required meta tags in html template and generates favicons of all sizes. All you need to do is fill `config/index.js` with your own values and add the biggest favicon to generate other sizes from it — 512x512 png is recommended.
 
 ### 🚦 CI/CD
 
-CI/CD includes validation checks (linting, formatting, type checking, unit and E2E testing), auto deploys of Storybook to Chromatic and Lighthouse checks. All these goes on pushes / pull requests in master branch. You can find Github Actions workflow in `.github/main.yml`.
+CI/CD includes validation checks (linting, formatting, type checking, unit and E2E testing), auto deploys of Storybook to Chromatic and Lighthouse checks. All these go on pushes/pull requests in the master branch. You can find Github Actions workflow in `.github/main.yml`.
 
-Of course all of these is a personal thing, and you can create your own CI/CD process from scratch. Starter's purpose is just providing sensible defaults and at least give ready to use setup to future myself.
+Of course, all of these is a personal thing, and you can create your own CI/CD process from scratch. Starter's purpose is just providing sensible defaults and at least give ready to use setup to future me.
 
 🚨 App deploys to Netlify are running automatically without additional setup requirements. All you need is to create a new project from Github repo on [Netlify website](https://app.netlify.com/signup)
 
 🚨 Github Actions workflow requires you to have 2 secrets in your repository: `CHROMATIC_PROJECT_TOKEN` which you get when signed in with [Chromatic](https://www.chromatic.com/start) and `LHCI_GITHUB_APP_TOKEN` which you can get with [installing Lighthouse Github app](https://github.com/GoogleChrome/lighthouse-ci/blob/master/docs/getting-started.md#github-app-method-recommended)
 
-🚨 Lighthouse by default will run on **ALL** html files in `public` folder. Firstly, this takes a lot of time, and secondly this includes `offline-plugin-app-shell-fallback` which is not a real page and will break your check. This is why i defined an array of URLs in `lighthouserc.js` to run Lighthouse with. Reconfigure them with your own pages (`index` at least)
+🚨 Lighthouse by default will run on **ALL** html files in `public` folder. Firstly, this takes a lot of time, and secondly, this includes `offline-plugin-app-shell-fallback` which is not a real page and will break your check. This is why I defined an array of URLs in `lighthouserc.js` to run Lighthouse with. Reconfigure them with your own pages (`index` at least)
 
 ### 📊 Bundle stats
 
-Webpack Bundle Analyzer is an awesome tool to give you a sight on build content via cool D3 chart. `yarn build` command generates static report in `public` folder. To simplify access to report file i've added `yarn stats` command to open browser for you.
+Webpack Bundle Analyzer is an awesome tool to give you a sight on build content via a cool D3 chart. `yarn build` command generates the static report in `public` folder. To simplify access to the report file I've added `yarn stats` command to open the browser for you.
 
 In addition to that, `yarn build` command generates `stats.json` file with Webpack stats which can be viewed via online tools like [Webpack Analyse](http://webpack.github.io/analyse/), [Webpack Visualizer](https://chrisbateman.github.io/webpack-visualizer/) and [Webpack Chart](https://alexkuz.github.io/webpack-chart/).
 
 ### 🌐 Browserslist
 
-Browsers support is defined by specifying `browserslist` array in `package.json`. This starter supports only last 2 versions of popular browsers. If you want support more wide-range of browsers you can override this array or completely remove it to go with [Gatsby defaults](https://www.gatsbyjs.org/docs/browser-support/) which contains IE11.
+Browsers' support is defined by specifying `browserslist` array in `package.json`. This starter supports only the last 2 versions of popular browsers. If you want to support more wide-range of browsers you can override this array or completely remove it to go with [Gatsby defaults](https://www.gatsbyjs.org/docs/browser-support/) which contains IE11.
 
 ### 💥 Aliases
 
@@ -272,8 +272,8 @@ To not write long unreliable import paths like `../../../config/theme` starter d
 
 To create your own alias you need to add it to:
 
-1. **gatsby-config.js** — to make it available in app through Webpack
-1. **jest.config.js** — to make it available in testing environment
-1. **.storybook/main.js** — to make it available in Storybook environment
+1. **gatsby-config.js** — to make it available in the app through Webpack
+1. **jest.config.js** — to make it available in the testing environment
+1. **.storybook/main.js** — to make it available in the Storybook environment
 1. **tsconfig.json** — to make Typescript understand it
 1. **.eslintrc.js** — to make ESLint understand it
