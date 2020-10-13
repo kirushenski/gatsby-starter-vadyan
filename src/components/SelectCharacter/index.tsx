@@ -6,17 +6,17 @@ import Character from '@/components/Character'
 import media from '@/utils/media'
 import { ThemeProps } from '@theme'
 
-const Wrapper = styled.div(({ theme }: ThemeProps) => ({
+const Wrapper = styled.div(() => ({
   display: 'grid',
-  gridTemplateColumns: `1fr ${theme.grid * 20}px`,
-  gridGap: theme.grid * 3,
+  gridTemplateColumns: '1fr 10rem',
+  gridGap: '1.5rem',
   justifyContent: 'center',
   alignItems: 'center',
   [media.sm]: { gridTemplateColumns: '1fr', justifySelf: 'stretch' },
 }))
 
 const Button = styled.button(({ theme }: ThemeProps) => ({
-  ...padding(theme.grid * 2, theme.grid),
+  ...padding('1rem', '0.5rem'),
   ...linearGradient({
     colorStops: [`${theme.colors.purpleDark} 10%`, `${theme.colors.purple} 51%`, `${theme.colors.purpleDark} 90%`],
     toDirection: 'to right',
@@ -26,9 +26,10 @@ const Button = styled.button(({ theme }: ThemeProps) => ({
   borderRadius: 4,
   boxShadow: theme.shadows.basic,
   backgroundSize: '200% auto',
-  ...transitions('background-position', theme.transitions.basic),
+  ...transitions(['background-position'], theme.transitions.long),
   ':hover': {
     backgroundPosition: 'right center',
+    ...transitions(['background-position'], theme.transitions.short),
   },
 }))
 

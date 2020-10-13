@@ -1,12 +1,12 @@
 const path = require('path')
 
 module.exports = {
-  // All stories are written in mdx. Intro story is the first in the list
-  stories: ['intro.stories.mdx', '../src/components/**/*.stories.mdx'],
+  // All stories are written in mdx
+  stories: ['../src/components/**/*.stories.mdx'],
   addons: ['@storybook/addon-essentials', '@storybook/addon-a11y'],
   webpackFinal: async config => {
-    // Set NODE_ENV to 'production' by default, to allow babel-plugin-remove-graphql-queries to do his job
-    process.env.NODE_ENV = 'production'
+    // Set NODE_ENV to 'test' by default, to allow babel-plugin-remove-graphql-queries to do his job
+    process.env.NODE_ENV = 'test'
 
     const babelRule = config.module.rules.find(rule => rule.test.toString() === /\.(mjs|tsx?|jsx?)$/.toString())
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code

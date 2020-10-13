@@ -7,46 +7,55 @@ const colors = {
   purpleDark: '#362066',
 }
 
-const grid = 8
-
 const breakpoints = {
   lg: 1440,
   sm: 768,
 }
 
 const typography = {
-  breakpoints: ['lg', 'sm'] as (keyof typeof breakpoints)[],
   family: 'Manrope',
-  stack: [
-    'system-ui',
-    '-apple-system',
-    'BlinkMacSystemFont',
-    '"Segoe UI"',
-    'Roboto',
-    '"Helvetica Neue"',
-    'Arial',
-    'sans-serif',
-  ],
+  stacks: {
+    sansSerif: [
+      'system-ui',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Avenir Next"',
+      'Avenir',
+      'Helvetica Neue',
+      'Helvetica',
+      'Ubuntu',
+      'Roboto',
+      'Noto',
+      '"Segoe UI"',
+      'Arial',
+      'sans-serif',
+    ],
+    monospace: ['Menlo', 'Consolas', 'Monaco', '"Liberation Mono"', '"Lucida Console"', 'monospace'],
+  },
   styles: {
     body: {
-      desktop: { fontWeight: 400, lineHeight: 1.5, fontSize: 18 },
-      mobile: { fontSize: 16 },
+      fontSize: 'clamp(1rem, 2.25vw ,1.125rem)', // 16-18
+      lineHeight: 1.5,
     },
     h1: {
-      desktop: { fontWeight: 700, lineHeight: 1.5, fontSize: 36 },
-      mobile: { fontSize: 24 },
+      fontWeight: 700,
+      fontSize: 'clamp(1.5rem, 3.25vw ,2.25rem)', // 24-36
+      lineHeight: 1.5,
     },
     h2: {
-      desktop: { fontWeight: 700, lineHeight: 1.5, fontSize: 28 },
-      mobile: { fontSize: 18 },
+      fontWeight: 700,
+      fontSize: 'clamp(1.125rem, 2.25vw ,1.75rem)', // 18-28
+      lineHeight: 1.5,
     },
     title: {
-      desktop: { fontWeight: 700, lineHeight: 1.5, fontSize: 40 },
-      mobile: { fontSize: 24 },
+      fontWeight: 700,
+      fontSize: 'clamp(1.5rem, 4vw ,2.5rem)', // 24-40
+      lineHeight: 1.5,
     },
     nav: {
-      desktop: { fontWeight: 200, lineHeight: 1.5, fontSize: 24 },
-      mobile: { fontSize: 18 },
+      fontWeight: 200,
+      fontSize: 'clamp(1.125rem, 2.75vw ,1.5rem)', // 18-24
+      lineHeight: 1.5,
     },
   },
 }
@@ -56,12 +65,12 @@ const shadows = {
 }
 
 const transitions = {
-  basic: `300ms ease`,
+  short: '200ms ease-in-out',
+  long: '500ms ease-in-out',
 }
 
 const theme = {
   colors,
-  grid,
   breakpoints,
   typography,
   shadows,

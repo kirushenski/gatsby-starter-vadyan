@@ -3,7 +3,7 @@ module.exports = {
   transform: { '^.+\\.[tj]sx?$': '<rootDir>/test/jest-preprocess.js' },
   // Add manual mocks and aliases support
   moduleNameMapper: {
-    '.+\\.(jpg|jpeg|png|webp|woff|woff2|mp4|webm|mp3)$': '<rootDir>/__mocks__/file.js',
+    '.+\\.(jpg|jpeg|png|webp|woff|woff2|mp4|webm|mp3|css)$': '<rootDir>/__mocks__/file.js',
     '.+\\.svg$': '<rootDir>/__mocks__/svgr.js',
     '@test-utils': '<rootDir>/test/test-utils.tsx',
     '@theme': '<rootDir>/config/theme.ts',

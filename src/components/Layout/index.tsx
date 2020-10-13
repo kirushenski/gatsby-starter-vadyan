@@ -4,7 +4,6 @@ import { useTheme } from 'emotion-theming'
 import styled from '@emotion/styled'
 import { transitions, size, padding } from 'polished'
 import media from '@/utils/media'
-import typography from '@/utils/typography'
 import { Theme, ThemeProps } from '@theme'
 import { ReactComponent as LogoIcon } from '@/icons/logo.svg'
 import { ReactComponent as GithubIcon } from '@/icons/github.svg'
@@ -12,25 +11,28 @@ import { ReactComponent as GithubIcon } from '@/icons/github.svg'
 const Header = styled.header(({ theme }: ThemeProps) => ({
   display: 'grid',
   gridTemplateColumns: 'auto 1fr auto',
-  gridColumnGap: theme.grid * 4,
-  gridRowGap: theme.grid,
+  gridColumnGap: '2rem',
+  gridRowGap: '0.5rem',
   alignItems: 'center',
-  padding: theme.grid * 2,
+  padding: '1rem',
   backgroundColor: theme.colors.purpleDark,
   boxShadow: theme.shadows.basic,
   zIndex: 1,
-  [media.sm]: { gridTemplateColumns: 'auto 1fr', gridColumnGap: theme.grid * 2 },
+  [media.sm]: { gridTemplateColumns: 'auto 1fr', gridColumnGap: '1rem' },
 }))
 
-const Nav = styled.nav(({ theme }: ThemeProps) => ({
+const Nav = styled.nav(() => ({
   [media.sm]: { gridColumn: 2 },
-  'a:not(:last-child)': { marginRight: theme.grid * 2 },
+  'a:not(:last-child)': { marginRight: '1rem' },
 }))
 
 const StyledLink = styled(Link)(({ theme }: ThemeProps) => ({
-  ...typography('nav'),
-  ...transitions('font-weight', theme.transitions.basic),
-  ':hover, &.active': { fontWeight: 800 },
+  ...theme.typography.styles.nav,
+  ...transitions(['font-weight'], theme.transitions.long),
+  ':hover, &.active': {
+    fontWeight: 800,
+    ...transitions(['font-weight'], theme.transitions.short),
+  },
 }))
 
 const Main = styled.main(({ theme }: ThemeProps) => ({
@@ -38,15 +40,15 @@ const Main = styled.main(({ theme }: ThemeProps) => ({
   gridAutoFlow: 'row',
   justifyItems: 'center',
   alignContent: 'start',
-  gridGap: theme.grid * 3,
-  ...padding(theme.grid * 6, theme.grid * 2),
+  gridGap: '1.5rem',
+  ...padding('3rem', '1rem'),
   backgroundColor: theme.colors.purple,
-  [media.sm]: { ...padding(theme.grid * 3, null) },
+  [media.sm]: { ...padding('1.5rem', null) },
 }))
 
 const Footer = styled.footer(({ theme }: ThemeProps) => ({
   backgroundColor: theme.colors.purpleDark,
-  ...padding(theme.grid, theme.grid * 2),
+  ...padding('0.5rem', '1rem'),
   textAlign: 'center',
   boxShadow: theme.shadows.basic,
   fontSize: 0,
@@ -65,11 +67,11 @@ const Layout = ({ children }: LayoutProps) => {
       <Header>
         <LogoIcon
           css={{
-            ...size(theme.grid * 13),
-            [media.sm]: { ...size(theme.grid * 8) },
+            ...size('6.5rem'),
+            [media.sm]: { ...size('4rem') },
           }}
         />
-        <Link to="/" css={typography('title')}>
+        <Link to="/" css={theme.typography.styles.title}>
           Gatsby Starter Vadyan
         </Link>
         <Nav>
@@ -84,7 +86,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Main>{children}</Main>
       <Footer>
         <a href="https://github.com/p1t1ch/gatsby-starter" target="_blank" rel="noopener noreferrer">
-          <GithubIcon width={theme.grid * 6} title="Project page on Github" />
+          <GithubIcon width={48} title="Project page on Github" />
         </a>
       </Footer>
     </div>
