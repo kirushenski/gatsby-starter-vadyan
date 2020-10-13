@@ -10,8 +10,8 @@ export const parameters = {
   actions: { argTypesRegex: '^on.*' },
   // Use list of viewports provided by addon
   viewport: { viewports: INITIAL_VIEWPORTS },
-  // Use minimal step from project theme as Backgrounds addon grid step
-  grid: { cellSize: theme.grid },
+  // Use minimal step of 8 px as 0.5rem by default
+  grid: { cellSize: 8 },
   // Use backgrounds from colors field of project theme
   backgrounds: {
     values: Object.entries(theme.colors).map(([name, value]) => ({ name, value })),

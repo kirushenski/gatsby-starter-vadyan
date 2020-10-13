@@ -8,24 +8,24 @@ import { Theme, ThemeProps } from '@theme'
 const Article = styled.article(({ theme }: ThemeProps) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.grid * 2,
+  padding: '1rem',
   backgroundColor: theme.colors.purpleLight,
   color: theme.colors.purpleDark,
   boxShadow: theme.shadows.basic,
 }))
 
-const Image = styled.img(({ theme }: ThemeProps) => ({
+const Image = styled.img(() => ({
   borderRadius: '50%',
-  marginRight: theme.grid * 2,
+  marginRight: '1rem',
 }))
 
-const List = styled.dl(({ theme }: ThemeProps) => ({
+const List = styled.dl(() => ({
   display: 'grid',
-  gridTemplateColumns: `auto minmax(${theme.grid * 28}px, 1fr)`,
+  gridTemplateColumns: `auto minmax(14rem, 1fr)`,
   justifyItems: 'start',
   dt: { fontWeight: 700 },
   dd: {
-    paddingLeft: theme.grid,
+    paddingLeft: '0.5rem',
     [media.sm]: { padding: 0 },
   },
   [media.sm]: { gridTemplateColumns: '1fr' },
@@ -67,7 +67,7 @@ interface CharacterProps {
 const Character = ({ id }: CharacterProps) => {
   const theme = useTheme<Theme>()
 
-  const imageSize = theme.grid * 13
+  const imageSize = 104
   const fallbackText = 'loading...'
   const fallbackData: CharacterData = {
     character: {

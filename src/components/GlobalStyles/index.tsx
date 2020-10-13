@@ -3,7 +3,6 @@ import 'focus-visible'
 import { Global } from '@emotion/core'
 import { useTheme } from 'emotion-theming'
 import { buttons, transitions, normalize } from 'polished'
-import typography from '@/utils/typography'
 import { Theme } from '@theme'
 import '@/fonts/index.css'
 
@@ -23,14 +22,14 @@ const GlobalStyles = () => {
             color: theme.colors.purpleLight,
           },
           html: {
-            fontFamily: [theme.typography.family, ...theme.typography.stack].join(', '),
+            fontFamily: [theme.typography.family, ...theme.typography.stacks.sansSerif].join(', '),
             scrollBehavior: 'smooth',
             '@media (prefers-reduced-motion)': {
               scrollBehavior: 'auto',
             },
           },
           body: {
-            ...typography('body'),
+            ...theme.typography.styles.body,
             backgroundColor: theme.colors.purpleDark,
             color: theme.colors.purpleLight,
           },
@@ -38,8 +37,8 @@ const GlobalStyles = () => {
             margin: 0,
             padding: 0,
           },
-          h1: typography('h1'),
-          h2: typography('h2'),
+          h1: theme.typography.styles.h1,
+          h2: theme.typography.styles.h2,
           '.js-focus-visible :focus:not(.focus-visible)': {
             outline: 'none',
           },
