@@ -36,42 +36,15 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-postcss',
-    {
-      resolve: 'gatsby-alias-imports',
-      options: {
-        aliases: {
-          '@': `${__dirname}/src`,
-        },
-      },
-    },
+    'gatsby-plugin-image',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-sharp',
-      options: {
-        defaultQuality: 75,
-      },
-    },
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-svgr',
-      options: {
-        titleProp: true,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-      options: {
-        analyzerMode: 'static',
-        defaultSizes: 'gzip',
-        openAnalyzer: false,
-        generateStatsFile: true,
-      },
-    },
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

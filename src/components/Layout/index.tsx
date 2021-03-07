@@ -1,14 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { ReactComponent as LogoIcon } from '@/icons/logo.svg'
-import { ReactComponent as GithubIcon } from '@/icons/github.svg'
+import LogoIcon from '@/icons/logo.svg'
+import GithubIcon from '@/icons/github.svg'
 
 export interface LayoutProps {
   /** Page content */
   children: React.ReactNode
 }
 
-/** Hi pals */
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="grid grid-rows-layout min-h-screen">

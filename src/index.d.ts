@@ -8,8 +8,7 @@ type SvgrComponent = React.FC<
 >
 
 declare module '*.svg' {
-  export const ReactComponent: SvgrComponent
-  const value: string
+  const value: SvgrComponent
   export default value
 }
 
