@@ -1,30 +1,16 @@
 import React from 'react'
-import styled from '@emotion/styled'
-import { padding } from 'polished'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
-import { ThemeProps } from '@theme'
-
-const Code = styled.code(({ theme }: ThemeProps) => ({
-  fontFamily: theme.typography.stacks.monospace.join(', '),
-  ...padding('1rem', '2rem'),
-  backgroundColor: theme.colors.purpleLight,
-  color: theme.colors.purpleDark,
-  borderRadius: 4,
-  maxWidth: '100%',
-  overflowX: 'auto',
-  whiteSpace: 'nowrap',
-  '::before': { content: '"$ "' },
-  // [media.sm]: { ...padding('0.5rem', '1rem') },
-}))
 
 const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Quick start" />
-      <h1>Quick start</h1>
+      <h1 className="h1">Quick start</h1>
       <p>Start new project with Gatsby CLI:</p>
-      <Code>gatsby new project-name https://github.com/p1t1ch/gatsby-starter-vadyan</Code>
+      <code className="py-2 px-4 md:py-4 md:px-8 bg-purple-light text-purple-dark rounded-md whitespace-nowrap overflow-x-auto max-w-full">
+        gatsby new project-name https://github.com/p1t1ch/gatsby-starter-vadyan
+      </code>
     </Layout>
   )
 }

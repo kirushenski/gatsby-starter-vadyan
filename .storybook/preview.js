@@ -3,7 +3,6 @@ import { action } from '@storybook/addon-actions'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import RootWrapper from '@/components/RootWrapper'
 import '../test/loadershim'
-import theme from '@theme'
 
 export const parameters = {
   // Automatically create action args for all props that start with "on"
@@ -13,9 +12,9 @@ export const parameters = {
   // Use minimal step of 8 px as 0.5rem by default
   grid: { cellSize: 8 },
   // Use backgrounds from colors field of project theme
-  backgrounds: {
-    values: Object.entries(theme.colors).map(([name, value]) => ({ name, value })),
-  },
+  // backgrounds: {
+  //   values: Object.entries(theme.colors).map(([name, value]) => ({ name, value })),
+  // },
 }
 
 // Wrap all stories in same wrapper as main app and tests

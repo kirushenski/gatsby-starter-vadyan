@@ -1,7 +1,6 @@
 import React from 'react'
-import { ThemeProvider } from 'emotion-theming'
-import GlobalStyles from '@/components/GlobalStyles'
-import theme from '@theme'
+import '@fontsource/manrope/variable.css'
+import '@/styles/global.css'
 
 interface RootWrapperProps {
   /** Site content */
@@ -9,12 +8,7 @@ interface RootWrapperProps {
 }
 
 const RootWrapper = ({ children }: RootWrapperProps) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      {children}
-    </ThemeProvider>
-  )
+  return <>{children}</>
 }
 
 export default RootWrapper

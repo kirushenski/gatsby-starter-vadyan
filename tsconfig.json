@@ -10,7 +10,6 @@
     "baseUrl": ".",
     "paths": {
       "@test-utils": ["test/test-utils.tsx"],
-      "@theme": ["config/theme.ts"],
       "@/*": ["src/*"]
     }
   }

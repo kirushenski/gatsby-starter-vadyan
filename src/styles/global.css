@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-behaviour-smooth;
+  }
+
+  body {
+    @apply body bg-purple-dark text-purple-light;
+  }
+
+  ::selection {
+    @apply bg-purple-dark text-purple-light;
+  }
+
+  .js-focus-visible :focus:not(.focus-visible) {
+    @apply outline-none;
+  }
+
+  :focus {
+    @apply outline;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  code::before {
+    content: '$ ';
+  }
+}
+
+@layer utilities {
+  .scroll-behaviour-smooth {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .body {
+    @apply text-body-mobile md:text-body;
+  }
+
+  .h1 {
+    @apply text-h1-mobile md:text-h1 font-bold;
+  }
+
+  .header {
+    @apply text-header-mobile md:text-header font-bold;
+  }
+}
