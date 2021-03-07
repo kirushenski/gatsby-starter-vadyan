@@ -8,8 +8,8 @@
     "build": "gatsby build",
     "start": "gatsby serve -H 0.0.0.0 -p 8000",
     "copy-static-queries": "cp -r ./public/page-data/sq/d ./public/static",
-    "storybook": "yarn copy-static-queries && start-storybook -s public -p 8080 --ci",
-    "storybook:build": "yarn copy-static-queries && build-storybook -s public -o docs",
+    "storybook": "npm run copy-static-queries && start-storybook -s public -p 8080 --ci",
+    "storybook:build": "npm run copy-static-queries && build-storybook -s public -o docs",
     "storybook:start": "serve docs -l 8080",
     "test": "is-ci test:coverage test:watch",
     "test:coverage": "jest --coverage",
@@ -20,18 +20,19 @@
     "prettier": "prettier --write",
     "format": "prettier . --write --ignore-path .gitignore",
     "type-check": "tsc --noEmit",
-    "validate": "yarn lint && yarn format && yarn type-check && yarn test:coverage && yarn test:e2e:run",
-    "clean": "gatsby clean"
+    "validate": "npm run lint && npm run format && npm run type-check && npm run test:coverage",
+    "clean": "gatsby clean",
+    "setup": "npm i && npm run validate"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn type-check"
+      "pre-commit": "lint-staged && npm run type-check"
     }
   },
   "lint-staged": {
     "*.{tsx,ts,mdx,js}": [
-      "yarn lint",
-      "yarn format"
+      "npm run lint",
+      "npm run format"
     ]
   },
   "eslintIgnore": [
