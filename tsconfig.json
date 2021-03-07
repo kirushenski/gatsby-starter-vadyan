@@ -12,8 +12,6 @@
       "@test-utils": ["test/test-utils.tsx"],
       "@theme": ["config/theme.ts"],
       "@/*": ["src/*"]
-    },
-    "types": ["node", "@emotion/core", "jest", "jest-emotion", "testing-library__jest-dom"]
-  },
-  "include": ["src", "test"]
+    }
+  }
 }

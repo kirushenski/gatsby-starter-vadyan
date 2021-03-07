@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 import { padding } from 'polished'
 import Layout from '@/components/Layout'
 import Seo from '@/components/Seo'
-import media from '@/utils/media'
 import { ThemeProps } from '@theme'
 
 const Code = styled.code(({ theme }: ThemeProps) => ({
@@ -16,7 +15,7 @@ const Code = styled.code(({ theme }: ThemeProps) => ({
   overflowX: 'auto',
   whiteSpace: 'nowrap',
   '::before': { content: '"$ "' },
-  [media.sm]: { ...padding('0.5rem', '1rem') },
+  // [media.sm]: { ...padding('0.5rem', '1rem') },
 }))
 
 const IndexPage = () => {

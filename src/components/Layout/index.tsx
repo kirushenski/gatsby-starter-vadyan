@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import { useTheme } from 'emotion-theming'
 import styled from '@emotion/styled'
 import { transitions, size, padding } from 'polished'
-import media from '@/utils/media'
 import { Theme, ThemeProps } from '@theme'
 import { ReactComponent as LogoIcon } from '@/icons/logo.svg'
 import { ReactComponent as GithubIcon } from '@/icons/github.svg'
@@ -18,11 +17,11 @@ const Header = styled.header(({ theme }: ThemeProps) => ({
   backgroundColor: theme.colors.purpleDark,
   boxShadow: theme.shadows.basic,
   zIndex: 1,
-  [media.sm]: { gridTemplateColumns: 'auto 1fr', gridColumnGap: '1rem' },
+  // [media.sm]: { gridTemplateColumns: 'auto 1fr', gridColumnGap: '1rem' },
 }))
 
 const Nav = styled.nav(() => ({
-  [media.sm]: { gridColumn: 2 },
+  // [media.sm]: { gridColumn: 2 },
   'a:not(:last-child)': { marginRight: '1rem' },
 }))
 
@@ -43,7 +42,7 @@ const Main = styled.main(({ theme }: ThemeProps) => ({
   gridGap: '1.5rem',
   ...padding('3rem', '1rem'),
   backgroundColor: theme.colors.purple,
-  [media.sm]: { ...padding('1.5rem', null) },
+  // [media.sm]: { ...padding('1.5rem', null) },
 }))
 
 const Footer = styled.footer(({ theme }: ThemeProps) => ({
@@ -68,7 +67,7 @@ const Layout = ({ children }: LayoutProps) => {
         <LogoIcon
           css={{
             ...size('6.5rem'),
-            [media.sm]: { ...size('4rem') },
+            // [media.sm]: { ...size('4rem') },
           }}
         />
         <Link to="/" css={theme.typography.styles.title}>
