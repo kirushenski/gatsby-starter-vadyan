@@ -10,8 +10,8 @@ interface SeoQuery {
       keywords: string[]
       baseUrl: string
       lang: string
-      facebookUsername: string
-      twitterUsername: string
+      facebookUsername?: string
+      twitterUsername?: string
     }
   }
 }

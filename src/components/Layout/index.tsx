@@ -11,7 +11,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="grid grid-rows-layout min-h-screen">
-      <header className="z-10 flex items-center p-4 shadow">
+      <header className="z-10 flex items-center p-4 bg-purple-dark shadow">
         <LogoIcon className="w-16 h-16 md:w-24 md:h-24 mr-4 md:mr-8" />
         <Link to="/" className="header">
           Gatsby Starter Vadyan
@@ -20,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
       <main className="grid grid-flow-row gap-6 justify-items-center content-start py-6 px-4 md:py-12 bg-purple">
         {children}
       </main>
-      <footer className="grid place-items-center py-2 px-4 shadow">
+      <footer className="grid place-items-center py-2 px-4 bg-purple-dark shadow">
         <a href="https://github.com/p1t1ch/gatsby-starter" target="_blank" rel="nofollow noopener noreferrer">
           <GithubIcon title="Project page on Github" className="w-12 h-12" />
         </a>
