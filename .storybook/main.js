@@ -1,8 +1,8 @@
 const path = require('path')
 
 module.exports = {
-  // All stories are written in mdx
-  stories: ['../src/components/**/*.stories.mdx'],
+  // All stories are written in tsx
+  stories: ['../src/components/**/*.stories.tsx'],
   addons: ['@storybook/addon-essentials', '@storybook/addon-a11y'],
   webpackFinal: async config => {
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code

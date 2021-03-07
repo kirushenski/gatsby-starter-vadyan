@@ -16,7 +16,7 @@ interface SeoQuery {
   }
 }
 
-interface SeoProps {
+export interface SeoProps {
   /** Title tag */
   title?: string
   /** Meta description */

@@ -26,10 +26,6 @@
   svg {
     fill: currentColor;
   }
-
-  code::before {
-    content: '$ ';
-  }
 }
 
 @layer utilities {
@@ -49,5 +45,13 @@
 
   .header {
     @apply text-header-mobile md:text-header font-bold;
+  }
+
+  .code {
+    @apply py-2 px-4 md:py-4 md:px-8 bg-purple-light text-purple-dark rounded-md whitespace-nowrap overflow-x-auto max-w-full;
+  }
+
+  .code::before {
+    content: '$ ';
   }
 }

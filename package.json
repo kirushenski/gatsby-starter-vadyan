@@ -15,7 +15,7 @@
     "test:watch": "jest --watch --passWithNoTests",
     "coverage": "open ./coverage/lcov-report/index.html",
     "stats": "open ./public/report.html",
-    "lint": "eslint . --ext .tsx,.ts,.mdx,.js --fix",
+    "lint": "eslint . --ext .tsx,.ts,.js --fix",
     "format": "prettier . --write --ignore-path .gitignore",
     "type-check": "tsc --noEmit",
     "validate": "npm run lint && npm run format && npm run type-check && npm run test:coverage",
@@ -28,7 +28,7 @@
     }
   },
   "lint-staged": {
-    "*.{tsx,ts,mdx,js}": [
+    "*.{tsx,ts,js}": [
       "npm run lint",
       "npm run format"
     ]
@@ -97,7 +97,6 @@
     "eslint-plugin-jest": "^24.1.0",
     "eslint-plugin-jest-dom": "^3.2.3",
     "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-mdx": "^1.8.2",
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^4.1.2",
     "eslint-plugin-testing-library": "^3.9.1",
