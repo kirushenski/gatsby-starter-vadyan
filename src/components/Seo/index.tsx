@@ -10,13 +10,13 @@ interface SeoQuery {
       keywords: string[]
       baseUrl: string
       lang: string
-      facebookUsername: string
-      twitterUsername: string
+      facebookUsername?: string
+      twitterUsername?: string
     }
   }
 }
 
-interface SeoProps {
+export interface SeoProps {
   /** Title tag */
   title?: string
   /** Meta description */
@@ -29,6 +29,7 @@ interface SeoProps {
   pathname?: string
 }
 
+/** Component adds meta tags in head via react-helmet. Pass this component on every page and override values via props if needed */
 const Seo = ({ title, description, keywords, image, pathname }: SeoProps) => {
   const data: SeoQuery = useStaticQuery(graphql`
     {

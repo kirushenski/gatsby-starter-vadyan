@@ -18,7 +18,6 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:import/typescript',
-    'plugin:mdx/recommended',
     'plugin:jest/recommended',
     'plugin:jest/style',
     'plugin:jest-dom/recommended',
@@ -46,7 +45,6 @@ module.exports = {
       alias: {
         map: [
           ['@test-utils', './test/test-utils.tsx'],
-          ['@theme', './config/theme.ts'],
           ['@', './src'],
         ],
         extensions: ['.tsx', '.ts', '.js'],
@@ -57,11 +55,4 @@ module.exports = {
       version: 'detect',
     },
   },
-  overrides: [
-    {
-      // Add support for mdx files with eslint-plugin-mdx. Simply adding it in "extends" doesn't work
-      files: ['*.mdx'],
-      extends: ['plugin:mdx/overrides'],
-    },
-  ],
 }
