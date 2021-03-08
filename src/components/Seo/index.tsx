@@ -29,6 +29,7 @@ export interface SeoProps {
   pathname?: string
 }
 
+/** Component adds meta tags in head via react-helmet. Pass this component on every page and override values via props if needed */
 const Seo = ({ title, description, keywords, image, pathname }: SeoProps) => {
   const data: SeoQuery = useStaticQuery(graphql`
     {

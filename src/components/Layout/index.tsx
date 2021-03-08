@@ -8,6 +8,7 @@ export interface LayoutProps {
   children: React.ReactNode
 }
 
+/** Component shares layout structure between pages. Pass common sections like header, footer and content container here and wrap page components with it */
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="grid grid-rows-layout min-h-screen">
