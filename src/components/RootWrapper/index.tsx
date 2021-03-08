@@ -1,4 +1,5 @@
 import React from 'react'
+import 'focus-visible'
 import '@fontsource/manrope/variable.css'
 import '@/styles/global.css'
 

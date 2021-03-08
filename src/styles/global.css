@@ -11,20 +11,16 @@
     @apply body bg-purple-dark text-purple-light;
   }
 
-  ::selection {
-    @apply bg-purple-dark text-purple-light;
+  svg {
+    fill: currentColor;
   }
 
-  .js-focus-visible :focus:not(.focus-visible) {
+  :focus:not(.focus-visible) {
     @apply outline-none;
   }
 
   :focus {
     @apply outline;
-  }
-
-  svg {
-    fill: currentColor;
   }
 }
 

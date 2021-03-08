@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import LogoIcon from '@/icons/logo.svg'
-// import GithubIcon from '@/icons/github.svg'
+import GithubIcon from '@/icons/github.svg'
 
 export interface LayoutProps {
   /** Page content */
@@ -22,7 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
       </main>
       <footer className="grid place-items-center py-2 px-4 bg-purple-dark">
         <a href="https://github.com/p1t1ch/gatsby-starter" target="_blank" rel="nofollow noopener noreferrer">
-          {/* <GithubIcon title="Project page on Github" className="w-12 h-12" /> */}
+          <GithubIcon title="Project page on Github" className="w-12 h-12" />
         </a>
       </footer>
     </div>
