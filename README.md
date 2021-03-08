@@ -95,4 +95,5 @@ This starter’s purpose is to help you setup essential tools like Typescript, E
 ## Notes
 
 1. If you are using `npm@7` always run `npm i` with `--legacy-peer-deps` flag to avoid conflicts between tools
+1. Make sure that `public` directory exists before trying to run Storybook (run `npm start` for once)
 1. This starter uses beta version of Storybook to support `webpack@5` and `postcss@8`. Unfortunately `build-storybook` command doesn't work at the moment of writing. Follow the issue: https://github.com/storybookjs/storybook/issues/13893
