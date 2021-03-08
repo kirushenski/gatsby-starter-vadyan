@@ -1,3 +1,4 @@
+// Extend default Gatsby config with SVGR support, aliases and Webpack Bundle Analyzer
 const path = require('path')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
