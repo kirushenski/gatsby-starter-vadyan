@@ -4,8 +4,8 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     colors: {
-      purple: '#639',
       'purple-light': '#fcfaff',
+      purple: '#639',
       'purple-dark': '#362066',
     },
     fontFamily: {
@@ -19,9 +19,6 @@ module.exports = {
       'h1-mobile': ['1.5rem', 1.5],
       'header-mobile': ['1.5rem', 1.5],
     },
-    boxShadow: theme => ({
-      DEFAULT: `0 0 4px 1px ${theme('colors.purple-dark')}`,
-    }),
     extend: {
       outline: theme => ({
         DEFAULT: [`3px solid ${theme('colors.purple-light')}`, '2px'],

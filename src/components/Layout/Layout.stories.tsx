@@ -10,7 +10,4 @@ export default {
 const Template: Story<LayoutProps> = args => <Layout {...args} />
 
 export const Primary = Template.bind({})
-
-Primary.args = {
-  children: 'Page content',
-}
+Primary.args = { children: 'Page content' }

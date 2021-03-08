@@ -1,13 +1,24 @@
 const path = require('path')
 
 module.exports = {
-  // All stories are written in tsx
   stories: ['../src/components/**/*.stories.tsx'],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-a11y'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@storybook/addon-a11y',
+    // Make Storybook compatible with postcss@8 which is used by last version of Tailwind
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+        },
+      },
+    },
+  ],
   webpackFinal: async config => {
-    // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code
+    // Transpile Gatsby module because Gatsby includes untranspiled ES6 code
     config.module.rules[0].exclude = [/node_modules[\\/](?!(gatsby)[\\/])/]
-    // Remove static queries from components
+    // Remove static queries to make components with useStaticQuery work inside Storybook
     config.module.rules[0].use[0].options.plugins.push([
       require.resolve('babel-plugin-remove-graphql-queries'),
       {
@@ -17,26 +28,23 @@ module.exports = {
     ])
 
     // Add Svgr support
-    config.module.rules.unshift({
+    config.module.rules.find(rule => rule.test?.test('.svg')).exclude = path.resolve(__dirname, '../src/icons')
+    config.module.rules.push({
       test: /\.svg$/,
-      use: [
-        {
-          loader: '@svgr/webpack',
-          options: {
-            titleProp: true,
-          },
+      include: path.resolve(__dirname, '../src/icons'),
+      issuer: /\.((j|t)sx?)$/,
+      use: {
+        loader: require.resolve(`@svgr/webpack`),
+        options: {
+          titleProp: true,
         },
-        'url-loader',
-      ],
+      },
     })
 
     // Add aliases support
     config.resolve.alias = {
-      '@': path.join(__dirname, '../src'),
+      '@': path.resolve(__dirname, '../src'),
     }
-
-    // Disable performance budgets which don't make sense for Storybook
-    config.performance = false
 
     return config
   },
