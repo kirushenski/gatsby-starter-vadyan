@@ -1,0 +1,5 @@
+@layer utilities {
+  .scroll-behaviour-smooth {
+    scroll-behavior: smooth;
+  }
+}

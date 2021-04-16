@@ -1,0 +1,21 @@
+@layer base {
+  html {
+    @apply scroll-behaviour-smooth;
+  }
+
+  body {
+    @apply body bg-purple-dark text-purple-light;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  :focus:not(.focus-visible) {
+    @apply outline-none;
+  }
+
+  :focus {
+    @apply outline;
+  }
+}
