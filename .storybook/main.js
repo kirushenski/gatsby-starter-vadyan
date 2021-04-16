@@ -46,6 +46,17 @@ module.exports = {
       '@': path.resolve(__dirname, '../src'),
     }
 
+    // Pass empty module instead of polyfill for the conflicting module (for webpack@5 compatibility)
+    config.resolve.fallback = {
+      crypto: false,
+    }
+
+    // Disable performance budgets which don't make much sense for Storybook
+    config.performance = false
+
     return config
+  },
+  core: {
+    builder: 'webpack5',
   },
 }
