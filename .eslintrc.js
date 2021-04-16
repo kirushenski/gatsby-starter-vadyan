@@ -21,7 +21,7 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:jest/style',
     'plugin:jest-dom/recommended',
-    'plugin:testing-library/recommended',
+    'plugin:testing-library/react',
     'prettier',
   ],
   rules: {
