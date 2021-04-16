@@ -2,14 +2,14 @@
 const path = require('path')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
-exports.onCreateWebpackConfig = ({ getConfig, actions, stage, loaders }) => {
+exports.onCreateWebpackConfig = ({ getConfig, actions, stage }) => {
   const existingConfig = getConfig()
 
   const rules = existingConfig.module.rules.map(rule => {
     if (String(rule.test) === String(/\.(ico|svg|jpg|jpeg|png|gif|webp|avif)(\?.*)?$/)) {
       return {
         ...rule,
-        test: /\.(ico|jpg|jpeg|png|gif|webp|avif)(\?.*)?$/,
+        exclude: path.resolve(__dirname, './src/icons'),
       }
     }
     return rule
@@ -28,11 +28,7 @@ exports.onCreateWebpackConfig = ({ getConfig, actions, stage, loaders }) => {
       rules: [
         {
           test: /\.svg$/,
-          issuer: /\.(?!(j|t)sx?)$/,
-          use: loaders.url(),
-        },
-        {
-          test: /\.svg$/,
+          include: path.resolve(__dirname, './src/icons'),
           issuer: /\.((j|t)sx?)$/,
           use: {
             loader: require.resolve(`@svgr/webpack`),
