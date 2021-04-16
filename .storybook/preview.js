@@ -10,11 +10,11 @@ export const parameters = {
   actions: { argTypesRegex: '^on.*' },
   // Use list of viewports provided by addon
   viewport: { viewports: INITIAL_VIEWPORTS },
-  // Use minimal step of 8 px as 0.5rem by default
-  grid: { cellSize: 8 },
-  // Use colors from tailwind theme as backgrounds
   backgrounds: {
+    // Use colors from tailwind theme as backgrounds
     values: Object.entries(tailwindConfig.theme.colors).map(([name, value]) => ({ name, value })),
+    // Use minimal step of 8 px as 0.5rem by default
+    grid: { cellSize: 8 },
   },
 }
 
