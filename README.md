@@ -80,7 +80,9 @@ This starter’s purpose is to help you setup essential tools like Typescript, E
 | `start`             | Build app in dev mode and start development server on 8000                                 |
 | `build`             | Build app in prod mode in `public` folder                                                  |
 | `serve`             | Browse production build from `public` folder locally on 8000                               |
-| `storybook`         | Start a Storybook in dev mode on random port                                               |
+| `storybook`         | Build Storybook in dev mode and start development server on random port                    |
+| `storybook:build`   | Build Storybook in prod mode in `docs` folder                                              |
+| `storybook:serve`   | Browse Storybook production build from `docs` folder locally on 8080                       |
 | `test`              | Run Jest in watch mode                                                                     |
 | `test:coverage`     | Run Jest in coverage mode. Use in CI or locally when you want to generate coverage reports |
 | `coverage`          | Оpen coverage reports. You need to generate them with `test:coverage` first                |
@@ -94,6 +96,6 @@ This starter’s purpose is to help you setup essential tools like Typescript, E
 
 ## Notes
 
-1. If you are using `npm@7` always run `npm i` with `--legacy-peer-deps` flag to avoid conflicts between tools
+1. If you are using `npm@7` and it gives you console errors on install run `npm i` with `--legacy-peer-deps` flag to avoid conflicts
 1. Make sure that `public` directory exists before trying to run Storybook (run `npm start` for once)
-1. This starter uses beta version of Storybook to support `webpack@5` and `postcss@8`. Unfortunately `build-storybook` command doesn't work at the moment of writing. Follow the issue: https://github.com/storybookjs/storybook/issues/13893
+1. `webpack` version is locked for Storybook compatibility

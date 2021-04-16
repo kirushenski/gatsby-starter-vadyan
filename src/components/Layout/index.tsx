@@ -3,13 +3,13 @@ import { Link } from 'gatsby'
 import LogoIcon from '@/icons/logo.svg'
 import GithubIcon from '@/icons/github.svg'
 
-export interface LayoutProps {
+export interface LayoutProps extends React.HTMLProps<HTMLDivElement> {
   /** Page content */
   children: React.ReactNode
 }
 
 /** Component shares layout structure between pages. Pass common sections like header, footer and content container here and wrap page components with it */
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, className = '', ...props }: LayoutProps) => {
   return (
     <div className="grid grid-rows-layout min-h-screen">
       <header className="z-10 flex items-center p-4 bg-purple-dark">
@@ -18,7 +18,10 @@ const Layout = ({ children }: LayoutProps) => {
           Gatsby Starter Vadyan
         </Link>
       </header>
-      <main className="grid grid-flow-row gap-6 justify-items-center content-start py-6 px-4 md:py-12 bg-purple">
+      <main
+        className={`grid grid-flow-row gap-6 justify-items-center content-start py-6 px-4 md:py-12 bg-purple ${className}`}
+        {...props}
+      >
         {children}
       </main>
       <footer className="grid place-items-center py-2 px-4 bg-purple-dark">
