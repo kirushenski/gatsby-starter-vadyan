@@ -80,7 +80,9 @@ This starter’s purpose is to help you setup essential tools like Typescript, E
 | `start`             | Build app in dev mode and start development server on 8000                                 |
 | `build`             | Build app in prod mode in `public` folder                                                  |
 | `serve`             | Browse production build from `public` folder locally on 8000                               |
-| `storybook`         | Start a Storybook in dev mode on random port                                               |
+| `storybook`         | Build Storybook in dev mode and start development server on random port                    |
+| `storybook:build`   | Build Storybook in prod mode in `docs` folder                                              |
+| `storybook:serve`   | Browse Storybook production build from `docs` folder locally on 8080                       |
 | `test`              | Run Jest in watch mode                                                                     |
 | `test:coverage`     | Run Jest in coverage mode. Use in CI or locally when you want to generate coverage reports |
 | `coverage`          | Оpen coverage reports. You need to generate them with `test:coverage` first                |

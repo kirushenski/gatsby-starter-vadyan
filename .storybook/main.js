@@ -28,7 +28,10 @@ module.exports = {
     ])
 
     // Add SVGR support
-    config.module.rules.find(rule => rule.test?.test('.svg')).exclude = path.resolve(__dirname, '../src/icons')
+    config.module.rules.find(rule => rule.test && rule.test.test('.svg')).exclude = path.resolve(
+      __dirname,
+      '../src/icons'
+    )
     config.module.rules.push({
       test: /\.svg$/,
       include: path.resolve(__dirname, '../src/icons'),
